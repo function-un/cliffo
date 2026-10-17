@@ -12,14 +12,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve frontend files
+
+// Serve frontend files
 app.use(express.static(path.join(__dirname, "public")));
+
+// Serve ShopVistaHQ as the homepage
+app.get("/", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "ShopvistaHQ", "index.html"),
+        (err) => {
+            if (err) {
+                console.error("Homepage error:", err);
+                res.status(500).send("Homepage file could not be loaded.");
+            }
+        }
+    );
+});
 
 // Serve project files
 app.use(express.static(__dirname));
 
-// Serve product images if they are in this folder
-app.use('/shopvistaHQ', express.static(path.join(__dirname, 'ShopvistaHQ')));
-
+// Serve ShopVistaHQ files and assets
+app.use("/shopvistaHQ", express.static(path.join(__dirname, "ShopvistaHQ")));
 
 
 
