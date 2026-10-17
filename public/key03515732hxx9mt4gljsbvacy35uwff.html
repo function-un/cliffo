@@ -1,0 +1,2936 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <meta charset="UTF-8">
+    <title>shopvistaHQ ADMIN</title>
+    <link rel="icon" type="image/png" href="ico.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <div id="pamdd">
+                <div class="sidebar active"><i class="fa-solid fa-gauge-high"></i>
+                    DASHBOARD
+                </div>
+
+                <div class="sidebar"><i class="fa-solid fa-cart-shopping"></i>
+                    ORDERS
+                </div>
+
+                <div class="sidebar"><i class="fa-solid fa-list"></i>
+                    PRODUCTS
+                </div>
+                
+                <div class="sidebar"><i class="fa-solid fa-tags"></i>
+                    SALES
+                </div>
+
+                <div class="sidebar"><i class="fa-solid fa-plus"></i>
+                    ADD PRODUCT
+                </div>
+                <div class="sidebar"><i class="fa-solid fa-user-group"></i>
+                    CUSTOMERS
+                </div>
+                <div class="sidebar"><i class="fa-solid fa-gears"></i>
+                    SETTINGS
+                </div>
+
+                <div class="sidebar"><i class="fa-solid fa-receipt"></i>
+                    GENERATE INVOICE
+                </div>
+
+                <div class="sidebar"><i class="fa-solid fa-right-from-bracket"></i>
+                    LOGOUT
+                </div>
+            </div>
+        </div>
+        <div id="main"> 
+            <div id="addw">
+                <div id="addwhead">
+                  <div> 
+                    <div id="ddspread">
+                        <div style="color: #0f172a;font-weight: bolder;font-size: large;font-family: monospace;">
+                        Welcome to CLIFF O GLOBAL Administration Panel
+                        </div>
+                        <div id="badge">
+                            <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                            <i style="margin-right: 90px;" class="fa-solid fa-gear"></i>
+                            </div>
+                            <div>
+                            <img src="../shopvistaHQ/assets/images/logo1.png" alt="" style="width: 90px;height: 80px;position: absolute;top: 9;right: 39;">
+                          </div>
+   
+                        </div>
+                    </div>
+                    <div style="color:  #0f172a;font-weight: bolder;font-size: large;font-family: monospace;margin-top: 20px;">
+                        
+                    </div>
+                  </div>   
+                   
+                </div>
+                <div id="addwmainps">
+                    <div style="color: brown;font-weight: 700;margin: 20px; font-size: 30px;font-family: fantasy;">
+                        TRACKING.
+                      </div>
+                    <div id="addheadps">
+                        <div class="addhe">
+                            <div class="adin">
+                              <label for="pName">Enter Tracking NO.</label>
+                              <input type="text" id="pName" onfocus="this.style.backgroundColor ='e8f0fe';" onchange="this.style.backgroundColor =(this.value == '' ? 'brown' : 'd4af37');" placeholder="Enter Tracking ID" style="background-color:0f172a;">
+                            </div>
+                            <div class="adin">
+                              <button style="background: brown; color: whitesmoke;width: 23%;height: 30px;border-radius: 5px;display: block;margin-bottom: 25px;margin-top: 5px;font-family: monospace; margin-right: 660px;">
+                                Update Status</button>
+                            </div>
+                    </div>
+                    <div id="cardcon" style="border-radius: 5px; background: #0f172a; margin: 0px 15px 15px 15px;height: 280px;">
+                    <div style="color:brown;font-weight: 700;margin: 20px; font-size: 30px;font-family: fantasy; ">
+                        CONFIGURATION.
+                      </div>        
+                            <div class="adin">
+                              <label for="pModel">Delivery charges</label>
+                              <input type="number" id="gidiState" onfocus="this.style.backgroundColor ='e8f0fe';" onchange="this.style.backgroundColor =(this.value === '' ? 'brown' : 'd4af37');" placeholder="#" style="background-color:#cbd5f5;">
+                            </div>
+                            <div class="adin">
+                              <label for="prize">Interstate delivery</label>
+                              <input type="number" id="interState" onfocus="this.style.backgroundColor ='e8f0fe';" onchange="this.style.backgroundColor =(this.value === '' ? 'brown' : 'd4af37');" placeholder="#" style="background-color:#cbd5f5;">
+                            </div>
+                            <div class="adin">
+                              <label for="about">VAT(%)</label>
+                              <input type="number" id="vatT" onfocus="this.style.backgroundColor ='e8f0fe';" onchange="this.style.backgroundColor =(this.value === '' ? 'brown' : 'd4af37');" placeholder="" style="background-color:#cbd5f5;">
+                            </div>
+                            <div class="adin">
+                              <button onclick="deliveryBut()" style="background: brown;border: 1px solid beige; color: fff;width: 23%;height: 35px;font-family: monospace;border-radius: 5px;display: block;margin-top: 25px; margin-right: 660px;">
+                                Add delivery charges</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><hr style="margin: 0px 30px 0px 15px;">
+                <div class="autsel">
+                          <div class="pscat" style="border: none;height:35px;padding-top: 4px; background-color: brown;color: #fff;border-radius: 5px;margin-left: 15px;width: 96%;">
+                              <div class="pscat1" style="width: 22%;padding-top: 4px; font-family: monospace;">Delivery charges (by default)</div>
+                              <div class="pscat2" id="deliveryGidi" style="background: #d4af37;padding-top: 4px; color: #0f172a;font-family: fantasy; border-radius: 5px;font-size: 16px;margin-bottom: 3px;text-align: center;">₦
+                                </div>
+                              <div class="pscat3"></div>
+                              <div class="pscat4"></div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6" style="background: #0f172a;color: fff;font-family: monospace;padding-top: 4px;border:1px solid beige; border-radius: 5px;font-size: 14.7px; margin-bottom: 3px;">
+                                <label for="">SAVE</label>
+                              </div>
+                          </div>  
+                        </div>
+            </div>
+        </div>
+
+        <div id="main1"> 
+            <div id="addw">
+                <div id="addwhead">
+                    <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                        Orders
+                    </div>
+                </div>
+                  <div id="addwmainps">
+    <h2 style="margin: 20px;">Recent Orders</h2>
+
+    <table id="tod">
+      <thead>
+        <tr>
+          <th>Order No.</th>
+          <th>Date-Time</th>
+          <th>Email</th>
+          <th>Total</th>
+          <th>Order</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+ 
+  </div><hr style="margin: 2px 30px 0px 15px;">
+
+   
+                <div class="autsel">
+                          <div class="pscat" style="border: none;height:45px;padding-top: 10px; background-color: brown;color: #fff;border-radius: 5px;margin-left: 15px;width: 96%;">
+                              <div class="pscat1"></div>
+                              <div class="pscat2"></div>
+                              <div class="pscat3"></div>
+                              <div class="pscat4">
+                                <button id="prev">⬅ Prev</button>
+                              </div>
+                              <div class="pscat5">
+                                <span id="page">1 / 1</span>
+                              </div>
+                              <div class="pscat6">
+                                <label for=""></label>
+                                <button id="next">Next ➡</button>
+                              </div>
+                          </div>  
+                        </div>
+            </div>
+        </div>        
+
+        <div id="main2"> 
+            <div id="addw">
+                <div id="addwhead">
+                    <div>
+                      <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                        Categories
+                      </div>
+                    </div>
+                </div>
+                <div id="addwmainps">
+                    <div style="color: #0f172a;font-weight: 700;margin: 20px; font-size: 30px;font-family: fantasy;">
+                        ALL CATEGORIES
+                      </div>
+                    <div id="addheadps">
+                        <div class="autsel">
+                          <div class="pscat">  
+                            
+                            <div class="pscat2" style="color: green;padding-top: 5px; font-weight: bolder;font-size: 17px;font-family: monospace;">
+                                Live
+                            </div>
+                            <div class="pscat3">
+                                <i class="fa-brands fa-opencart fa-xl" style="color: brown;"></i>
+                            </div>
+                            <div class="pscat4" style="color: green;padding-top: 5px; font-weight: bolder;font-size: 17px;font-family: monospace;">
+                                Category
+                            </div>
+                            <div class="pscat5"></div>
+                            <div class="pscat6" style="color: green;padding-top: 5px; font-weight: bolder;font-size: 15px;font-family: fantasy;">
+                                <label>Online</label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                              
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Accessories</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="accMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                          
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"> <i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Phones</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="phoMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+            
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Computers</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="comMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                      
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4"> Electronics</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="enicMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                              
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Building Materials</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="bmMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                             
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Chanderliers</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="chandMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                            
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Electricals</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="eticalMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                              
+                              
+                              <div class="pscat2">12 products</div>
+                              <div class="pscat3"><i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4">Home Appliances</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="haMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat">
+                              
+                              <div class="pscat2">30 products</div>
+                              <div class="pscat3"> <i class="fa-solid fa-dolly fa-xl"></i></div>
+                              <div class="pscat4"> Front-1/Other-2</div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6">
+                                <label class="labe" onclick="hmMod()" ><i class="fa-solid fa-pen-to-square"></i></label>
+                                <label class="labe" onclick="otMod()"><i class="fa-solid fa-pen-to-square"></i></label>
+                              </div>
+                          </div>  
+                        </div><hr>
+                        <div class="autsel">
+                          <div class="pscat" style="border: none;height:45px;padding-top: 10px; background-color: brown;color: #fff;border-radius: 5px;width: 100%;">
+                              <div class="pscat1"></div>
+                              <div class="pscat2"></div>
+                              <div class="pscat3"></div>
+                              <div class="pscat4"></div>
+                              <div class="pscat5"></div>
+                              <div class="pscat6" style="padding-top: 5px;">
+                                <label for=""><i class="fa-solid fa-triangle-exclamation" style="color: #FFD43B;"></i></label>
+                              </div>
+                          </div>  
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main2ii"> 
+            <div id="addw">
+                <div id="addwmainps">
+                    <div style="display: flex;flex-direction: row;width: 98%;">
+                        
+                        <div style="color: #0f172a;font-weight: 700;width: 85%; margin: 20px; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10%; margin: 20px; font-size: 30px;font-family: monospace;">
+                            <-Back
+                        </div>
+                    </div>
+                    
+                    <div id="">
+                      <div style="display:flex;flex-direction: row;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 70px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 25px 300px 25px 300px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2>Prod. ID</h2>
+                                <p>No.${id}</p>
+                            </div>
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3>Price</h3>
+                                <p>${prize}</p>
+                            </div>
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3>Brand</h3>
+                                <p>${brand}</p>
+                            </div>
+                            <div>
+                                <h3>About</h3>
+                                <p>${about}</p>
+                            </div>    
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 25px;">
+                            <div>
+                                <h3>Description</h3>
+                                <p>${desc}</p>
+                            </div>
+                            <div>
+                                <h3>Description2</h3>
+                                <p>${desc2}</p>
+                            </div>
+                            <div>
+                                <h3>Review</h3>
+                                <p>${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="main2i"> 
+            <div id="addw">
+                <div id="addwhead">
+                    <div>
+                      <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;" id="catt">
+                        
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="autsel">
+                          <div class="pscat" style="margin-top: -20px;margin-left: 3px; height: 30px;padding-top: 10px; background: #d4af37;color: #0f172a;width: 98%; border-radius: 5px;">  
+                            <div class="pscat1"></div>
+                            <div class="pscat2" style="color: #0f172a;"><i class="fa-brands fa-opencart"></i></div>
+                            <div class="pscat3"></div>
+                            <div class="pscat4"></div>
+                            <div class="pscat5" style="color: #06402B;"><i class="fa-solid fa-tag"></i></div>
+                            <div class="pscat6" style="color: brown;padding-top: 5px; font-weight: bolder;font-size: 15px;font-family: fantasy;">
+                                <label><i class="fa-solid fa-dolly"></i></label>
+                            </div>
+                          </div>  
+                        </div>
+                    </div>    
+                </div>
+                <div id="addwmainps1" style=" width: 100%;max-width: 1050px; overflow: hidden;word-wrap: break-word;padding: 5px;display: flex;flex-direction: column;">
+                    <div id="addheadps1" style="min-height: 447px;display: flex;flex-direction: column;" >
+                   
+                    
+                    </div>
+                    <div id="datheadps1" style="min-height: 447px;display: flex;flex-direction: column;" >
+                        
+                   
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <!-- MAIN3 Sales Page -->
+<div id="main3"> 
+    <div id="addw">
+        <div id="addwhead">
+            <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                Sales
+            </div>
+        </div>
+        <div id="addwmainps">
+    <h2 style="margin: 20px;">TRANSACTIONS</h2>
+            
+            <table id="st">
+      <thead>
+        <tr>
+          <th>Order No.</th>
+          <th>Date-Time</th>
+          <th>Order</th>
+          <th>Phone No</th>
+          <th>DeliveryFee</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+            
+        </div>
+        <hr style="margin: 2px 30px 0px 15px;">
+        <div class="autsel">
+            <div class="pscat" style="border: none;height:35px;padding-top: 4px; background-color: brown;color: #fff;border-radius: 5px;margin-left: 15px;width: 96%;">
+                <div class="pscat4">
+                    <button id="prev">⬅ Prev</button>
+                </div>
+                <div class="pscat5">
+                    <span id="page">1 / 1</span>
+                </div>
+                <div class="pscat6">
+                    <button id="next">Next ➡</button>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+
+        <div id="main4"> 
+            <div id="addw">
+                <div id="addwhead">
+                    <div>
+                      <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                        CONFIQ
+                      </div>
+                    </div>
+                </div>
+                <div id="addwmainps">
+                    <div style="color: #0f172a;font-weight: 700;margin: 20px; font-size: 30px;font-family: fantasy;">
+                        UPDATE PRODUCTS
+                      </div>
+                      <div id="addheadps" style="font-weight: bold;">
+                          <div class="addhe">
+                            <div class="adin">
+                              <label for="daName">Product Name</label>
+                              <input type="text" id="daName" placeholder="Product Name"/>
+                            </div>
+                            <div class="adin">
+                              <label for="daModel">Product Model</label>
+                              <input type="text" id="daModel" placeholder="Product Model"/>
+                            </div>
+                            <div class="adin">
+                              <label for="dBrand">Brand Name</label>
+                              <input type="text" id="dBrand" placeholder="Enter Product Brand Name"/>
+                            </div>
+                            <div class="adin">
+                              <label for="dprize">Product Prize</label>
+                              <input type="number" id="dprize" placeholder="Enter Product Prize"/>
+                            </div>
+                            <div class="adin">
+                              <label for="dabout">About Product</label>
+                              <input type="text" id="dabout" placeholder="About Product"/>
+                            </div>
+                            <div class="adin">
+                              <label for="desc">Prod. Description</label>
+                              <textarea id="desc" placeholder="Product Description"></textarea>
+                            </div>
+                            <div class="adin">
+                              <label for="desc2">Prod. Description(2)</label>
+                              <textarea id="desc2" placeholder="Product Description"></textarea>
+                            </div>
+                            <div class="adin">
+                              <label for="rView">Prod. Review</label>
+                              <textarea id="rView" placeholder="Product Review"></textarea>
+                            </div>
+                            <div class="adin">
+                              <label for="">Product Image</label>
+                              <input type="file" id="imageUrl" placeholder="Select Product image">
+                            </div>
+                          </div>
+                   </div>
+
+
+                    </div>
+           
+                </div><hr style="margin: 2px 30px 0px 15px;">
+                <div class="autsel">
+                          <div class="pscat" style="border: none;height:35px;padding-top: 4px; background-color: brown;color: #fff;border-radius: 5px;margin-left: 15px;width: 96%;">
+                              <div class="pscat1"></div>
+                              <div class="pscat2">
+                                <input type="number" id="id" placeholder="Enter Prod ID">
+                              </div>
+                              <div class="pscat3">
+                                <label for=""></label>
+                                <select name="" id="dPage">
+                                    <option value="phone">Phone</option>
+                                    <option value="accessories">Accessories</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="electrical">Electrical</option>
+                                    <option value="chandelier">Chandelier</option>
+                                    <option value="buildingmat">Buildingmat</option>
+                                    <option value="appliance">Appliance</option>
+                                    <option value="computer">Computer</option>
+                                    <option value="otherp">Home-Prod</option>
+                                    <option value="otherpi">Other-Category</option>
+                                </select>
+                              </div>
+                              <div class="pscat5"></div>
+                              <div class="pscat4">Are you sure you want to modify?</div>
+                              <div class="pscat6">
+                                
+                                <button type="button" onclick="prodUp()" style="background: #0f172a;color: #fff;font-family: monospace;border-radius: 5px;font-size: 17px;">UPDATE</button>
+                              </div>
+                          </div>  
+                        </div>
+            </div>
+    
+
+
+        
+
+        <div id="main5"> 
+    <div id="addw">
+        <div id="addwhead">
+            <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                Customers
+            </div>
+        </div>
+
+        <div id="addwmainps">
+
+            <h2 style="margin: 20px;"> CUSTOMER LIST</h2>
+            
+            <table id="t">
+      <thead>
+        <tr>
+          <th>Order No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone No.</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+            
+        </div>
+
+        <hr style="margin: 2px 30px 0px 15px;">
+
+        <div class="autsel">
+            <div class="pscat" style="border: none;height:35px;padding-top: 4px; background-color: brown;color: #fff;border-radius: 5px;margin-left: 15px;width: 96%;">
+                <div class="pscat4">
+                    <button id="prev">⬅ Prev</button>
+                </div>
+                <div class="pscat5">
+                    <span id="page">1 / 1</span>
+                </div>
+                <div class="pscat6">
+                    <button id="next">Next ➡</button>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+        <div id="main6"> 
+    <div id="addw">
+        <div id="addwhead">
+            <div style="color: brown; font-weight: bolder; font-size: large; font-family: monospace;">
+                Settings
+            </div>
+        </div>
+        
+        <div id="addwmainps" style="border: none; background-color: #0f172a; color: #fff; padding: 15px;">
+            <div style="color: #d4af37; font-weight: 700; font-size: 30px; font-family: monospace;">
+                Security Level: High
+            </div>
+            <div class="autsel" style="background-color: #1e293b; padding: 20px;">
+            <!-- Account Settings Form -->
+            <div class="settings-card">
+                <div class="settings-row">
+                    <label>Username</label>
+                    <input type="text" placeholder="Admin_User" class="set-input">
+                </div>
+                
+                <div class="settings-row">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="admin@example.com" class="set-input">
+                </div>
+
+                <div class="settings-row">
+                    <label>Account Status</label>
+                    <span style="color: #22c55e; font-weight: bold;">● Active</span>
+                </div>
+
+                <!-- Your brown button bar updated -->
+          
+                   
+            </div>
+            
+        </div>
+        
+        </div>      
+    </div>
+</div>
+
+        <div id="main7"> 
+            
+        </div>
+
+        <div id="main8"> 
+            <div id="addw">
+                <div id="addwhead">
+                    <div>
+                      <div style="color: brown;font-weight: bolder;font-size: large;font-family: monospace;">
+                        Logout
+                      </div>
+                    </div>
+                </div>
+                <div id="addwmainps" style="border: none;background-color: #0f172a;color: #fff;">
+                    <div style="color: brown;font-weight: 700;margin: 20px; font-size: 30px;font-family: fantasy;">
+                        Are you sure you want to Logout?
+                      </div>
+                      <div id="addwmain2">
+                    <div class="autsel" style="background-color: #1e293b; padding: 20px;">
+            <!-- Account Settings Form -->
+            <div class="settings-card">
+                <div class="settings-row">
+                    <label>Yes</label>
+                    <button class="set-input">YES<button>
+                </div>
+                
+                <div class="settings-row">
+                    <label>No</label>
+                    <button class="set-input">NO<button>
+                </div>
+
+                <div class="settings-row">
+                    <label>Status</label>
+                    <span style="color: #22c55e; font-weight: bold;">● Active</span>
+                </div>
+
+                <!-- Your brown button bar updated -->
+               
+            </div>
+                </div>
+                </div>      
+                   
+
+                        
+                    
+                
+                </div>
+            </div>
+        </div>
+        
+       
+        
+    </div>
+</body>
+<script> const BASE_URL = "http://16.171.197.106"; </script>
+
+
+<script>
+
+
+const table = document.querySelector("#t tbody");
+const pageInfo = document.getElementById("page");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
+let customers = [];
+let currentPage = 1;
+const pageSize = 5;
+let totalPages = 1;
+
+async function loadCustomers() {
+  const res = await fetch("/customers");
+  customers = await res.json();
+  totalPages = Math.ceil(customers.length / pageSize) || 1;
+  renderPage();
+}
+
+function renderPage() {
+  table.innerHTML = "";
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const pageData = customers.slice(start, end);
+
+  pageData.forEach(c => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${c.clientId}</td>
+      <td>${c.name}</td>
+      <td>${c.email}</td>
+      <td>${c.phone}</td>
+      <td>${c.address}</td>
+    `;
+    table.appendChild(tr);
+  });
+
+  pageInfo.textContent = `${currentPage} / ${totalPages}`;
+}
+
+prevBtn.onclick = () => {
+  if (currentPage > 1) currentPage--;
+  renderPage();
+};
+nextBtn.onclick = () => {
+  if (currentPage < totalPages) currentPage++;
+  renderPage();
+};
+
+loadCustomers();
+
+
+</script>
+
+
+
+<script>
+    let deliveryData = {};
+
+async function loadDelivery() {
+  const res = await fetch("/delivery");
+  const data = await res.json();
+  deliveryData = data[0];
+}
+loadDelivery();
+</script>
+<script>
+async function DeLd() {
+  const res = await fetch("/delivery");
+  const data = await res.json();
+
+  document.getElementById("deliveryGidi").innerText = "₦" + data[0].gidiState;
+}
+DeLd();
+
+
+async function deliveryBut() {
+  const payload = {
+    gidiState: document.getElementById("gidiState").value,
+    interState: document.getElementById("interState").value,
+    vatT: document.getElementById("vatT").value
+  };
+
+  await fetch("/delivery", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  alert("Delivery Fee Updated");
+}
+</script>
+
+
+<script>
+    
+
+async function prodUp() {
+    const id = Number(document.getElementById("id").value);
+    const dPage = document.getElementById("dPage").value
+
+    const fd = new FormData();
+
+    fd.append("pName", document.getElementById("daName").value);
+    fd.append("pModel", document.getElementById("daModel").value);
+    fd.append("prize", document.getElementById("dprize").value);
+    fd.append("pBrand", document.getElementById("dBrand").value);
+    fd.append("about", document.getElementById("dabout").value);
+    fd.append("rView", document.getElementById("rView").value);
+    fd.append("desc", document.getElementById("desc").value);
+    fd.append("desc2", document.getElementById("desc2").value);
+    fd.append("imageUrl0", document.getElementById("imageUrl0").value);
+    fd.append("imageUrl1", document.getElementById("imageUrl1").value);
+    fd.append("imageUrl2", document.getElementById("imageUrl2").value);
+    fd.append("imageUrl3", document.getElementById("imageUrl3").value);
+
+
+
+    if (dPage === 'phone'){
+        const image = document.getElementById("imageUrl").files[0];
+        
+    if(image) {
+        fd.append("image", image)
+       
+    }
+
+
+    await fetch(`/shopvistaHQ/phone/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("PHONE CATE UPDATED")      
+    }
+    else if(dPage === 'computer'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/computer/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("COMPUTER CATE UPDATED")
+    }
+    else if(dPage === 'accessories'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/accessories/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("ACCESORY CATE UPDATED")
+    }
+    else if(dPage === 'electronics'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/electronics/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("ACCESORY CATE UPDATED")
+    }
+    else if(dPage === 'electrical'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/electrical/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("ACCESORY CATE UPDATED")
+    }
+    else if(dPage === 'chandelier'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/chandelier/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("ACCESORY CATE UPDATED")
+    }
+    else if(dPage === 'buildingmat'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/buildingmat/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("ACCESORY CATE UPDATED")
+    }else if(dPage === 'otherpi'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/otherpi/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("OTHER CATEGORY CATE UPDATED")
+    }else if(dPage === 'otherp'){
+        const image = document.getElementById("imageUrl").files[0];
+     
+    if(image) {
+        fd.append("image", image)
+     
+    }
+
+
+    await fetch(`/shopvistaHQ/otherp/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("HOME-PROD CATE UPDATED")
+    }
+    else if(dPage === 'appliance'){
+        const image = document.getElementById("imageUrl").files[0];
+    if(image) {
+        fd.append("image", image)
+    }
+
+
+    await fetch(`/shopvistaHQ/appliance/${id}`, {
+        method: "PUT",
+        body: fd
+    })
+    alert("ACCESORY CATE UPDATED")
+    }
+}
+      
+               
+                            
+                                  
+                            
+                                  
+
+</script>
+
+<script>
+    async function crodUp(){
+        const id = await document.getElementById("id").value;
+        await fetch(`/shopvistaHQ/computer/${id}`, {
+            method: "PUT",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify({
+                pModel: document.getElementById("pModel").value,
+                pName: document.getElementById("pName").value,
+                pBrand: document.getElementById("pBrand").value,
+                prize: document.getElementById("prize").value,
+                about: document.getElementById("about").value,
+                rView: document.getElementById("rView").value,
+                desc: document.getElementById("desc").value,
+                desc2: document.getElementById("desc2").value
+            })
+        });
+        alert("ENTER")
+    }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+    const rowsPerPage = 6;
+    let currentPage = 1;
+
+    const prev = document.querySelector("#main5 #prev");
+    const next = document.querySelector("#main5 #next");
+    const page = document.querySelector("#main5 #page");
+    const tableBody = document.querySelector("#main5 #t tbody");
+
+    let customers = [];
+
+    // Fetch customers.json
+    async function fetchCustomers() {
+        const res = await fetch("/sales.json");
+        customers = await res.json();
+        customers.reverse(); // newest first
+    }
+
+    function render() {
+        tableBody.innerHTML = "";
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageData = customers.slice(start, end);
+
+        pageData.forEach(c => {
+            tableBody.insertAdjacentHTML("beforeend", `
+                <tr>
+                    <td>${c.orderId || ""}</td>
+                    <td>${c.name || ""}</td>
+                    <td>${c.email || ""}</td>
+                    <td>${c.phone || ""}</td>
+                    <td>${c.address || ""}</td>
+                </tr>
+            `);
+        });
+
+        const totalPages = Math.ceil(customers.length / rowsPerPage) || 1;
+        page.textContent = `${currentPage} / ${totalPages}`;
+
+        prev.disabled = currentPage === 1;
+        next.disabled = currentPage === totalPages;
+    }
+
+    prev.onclick = () => {
+        if (currentPage > 1) {
+            currentPage--;
+            render();
+        }
+    };
+
+    next.onclick = () => {
+        if (currentPage < Math.ceil(customers.length / rowsPerPage)) {
+            currentPage++;
+            render();
+        }
+    };
+
+    await fetchCustomers();
+    render();
+});
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+    const rowsPerPage = 6;
+    let currentPage = 1;
+
+    const prev = document.querySelector("#main3 #prev");
+    const next = document.querySelector("#main3 #next");
+    const page = document.querySelector("#main3 #page");
+    const tableBody = document.querySelector("#main3 #st tbody");
+
+    let sales = [];
+
+    // Fetch sales data
+    async function fetchSales() {
+        const res = await fetch("/sales.json");
+        sales = await res.json();
+        sales.reverse(); // newest first
+    }
+
+    function render() {
+        tableBody.innerHTML = "";
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageData = sales.slice(start, end);
+
+        pageData.forEach(sale => {
+            tableBody.insertAdjacentHTML("beforeend", `
+                <tr>
+                    <td>${sale.orderId || ""}</td>
+                    <td>${sale.timestamp || ""}</td>
+                    <td>${sale.cartText || ""}</td>
+                    <td>${sale.phone || ""}</td>
+                    <td>₦${sale.delVal || ""}</td>
+                    <td>₦${sale.totalS || ""}</td>
+                </tr>
+            `);
+        });
+
+        const totalPages = Math.ceil(sales.length / rowsPerPage);
+        page.textContent = `${currentPage} / ${totalPages}`;
+
+        prev.disabled = currentPage === 1;
+        next.disabled = currentPage === totalPages;
+    }
+
+    prev.onclick = () => {
+        if (currentPage > 1) {
+            currentPage--;
+            render();
+        }
+    };
+    next.onclick = () => {
+        if (currentPage < Math.ceil(sales.length / rowsPerPage)) {
+            currentPage++;
+            render();
+        }
+    };
+
+    await fetchSales();
+    render();
+});
+</script>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+  const rowsPerPage = 6;
+  let currentPage = 1;
+  let cart = [];
+
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+  const pageLabel = document.getElementById("page");
+  const tableBody = document.querySelector("#tod tbody");
+
+  // 1. Fetch Cart Data
+  async function fetchCart() {
+    try {
+      const res = await fetch("/api/cart");
+      const data = await res.json();
+      cart = Array.isArray(data) ? data.reverse() : []; // Ensure it's an array
+    } catch (err) {
+      console.error("Fetch failed:", err);
+    }
+  }
+
+  // 2. Optimized Render Function
+  function render() {
+    tableBody.innerHTML = "";
+    const totalPages = Math.ceil(cart.length / rowsPerPage) || 1;
+
+    // Boundary check for current page
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const start = (currentPage - 1) * rowsPerPage;
+    const pageData = cart.slice(start, start + rowsPerPage);
+
+    tableBody.innerHTML = pageData.map(d => `
+      <tr>
+        <td>#${d.orderId}</td>
+        <td>${d.timestamp}</td>
+        <td>${d.name}</td>
+        <td>₦${d.totalS}</td>
+        <td>${d.cartText}</td>
+        <td>
+          <button class="pay-btn" data-id="${d.orderId}">Paid</button>
+        </td>
+      </tr>
+    `).join("");
+
+    pageLabel.textContent = `${currentPage} / ${totalPages}`;
+    prev.disabled = currentPage === 1;
+    next.disabled = currentPage === totalPages;
+  }
+
+  // 3. Event Delegation (Single Listener for all buttons)
+  tableBody.addEventListener("click", async (e) => {
+    if (e.target.classList.contains("pay-btn")) {
+      const orderId = e.target.dataset.id;
+      e.target.disabled = true; // Prevent double-clicks
+      
+      await fetch(`/api/pay/${orderId}`, { method: "POST" });
+      await fetchCart();
+      render();
+    }
+  });
+
+  // 4. Pagination Controls
+  prev.onclick = () => { if (currentPage > 1) { currentPage--; render(); } };
+  next.onclick = () => { if (currentPage < Math.ceil(cart.length / rowsPerPage)) { currentPage++; render(); } };
+
+  // Initial Load
+  await fetchCart();
+  render();
+});
+
+</script>
+
+    
+
+<script>
+    const side = document.getElementsByClassName("sidebar")[0];
+    const side1 = document.getElementsByClassName("sidebar")[1];
+    const side2 = document.getElementsByClassName("sidebar")[2];
+    const side3 = document.getElementsByClassName("sidebar")[3];
+    const side4 = document.getElementsByClassName("sidebar")[4];
+    const side5 = document.getElementsByClassName("sidebar")[5];
+    const side6 = document.getElementsByClassName("sidebar")[6];
+    const side7 = document.getElementsByClassName("sidebar")[7];
+    const side8 = document.getElementsByClassName("sidebar")[8];
+    const main = document.getElementById('main');
+    const main1 = document.getElementById('main1');
+    const main2 = document.getElementById('main2');
+    const main2i = document.getElementById('main2i');
+    const main2ii = document.getElementById('main2ii');
+    const main3 = document.getElementById('main3');
+    const main4 = document.getElementById('main4');
+const main5 = document.getElementById('main5');
+const main6 = document.getElementById('main6');
+const main7 = document.getElementById('main7');
+const main8 = document.getElementById('main8');
+
+    side.addEventListener('click', ()=>{
+        side1.classList.remove('active');
+        side2.classList.remove('active');
+        side3.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main1.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+
+        main.style.display="block";
+
+        
+
+        side.classList.add('active');
+    })
+    side1.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side2.classList.remove('active');
+        side3.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+
+        main1.style.display="block";
+
+        side1.classList.add('active');
+    })
+    side2.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side1.classList.remove('active');
+        side3.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+
+        main2.style.display="block";
+
+        side2.classList.add('active');
+    })
+    side3.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side2.classList.remove('active');
+        side1.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main1.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+
+        main3.style.display="block";
+
+        side3.classList.add('active');
+    })
+    side4.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side2.classList.remove('active');
+        side3.classList.remove('active');
+        side1.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main3.style.display="none";
+        main1.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+
+        main4.style.display="block";
+
+        side4.classList.add('active');
+    })
+    side5.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side2.classList.remove('active');
+        side3.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main1.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+
+        main5.style.display="block";
+
+        side5.classList.add('active');
+    })
+    side6.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side2.classList.remove('active');
+        side3.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side1.classList.remove('active');
+        side7.classList.remove('active');
+        side8.classList.remove('active');
+
+        main.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main1.style.display="none";
+        main7.style.display="none";
+
+        main6.style.display="block";
+
+        side6.classList.add('active');
+    })
+    side7.addEventListener('click', () => {
+      window.open('https://functioninvoice.netlify.app', '_blank', 'noopener,noreferrer');
+    });
+
+    side8.addEventListener('click', ()=>{
+        side.classList.remove('active');
+        side2.classList.remove('active');
+        side3.classList.remove('active');
+        side4.classList.remove('active');
+        side5.classList.remove('active');
+        side6.classList.remove('active');
+        side7.classList.remove('active');
+        side1.classList.remove('active');
+
+        main.style.display="none";
+        main2.style.display="none";
+        main2i.style.display="none";
+        main2ii.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main1.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+
+        main8.style.display="block";
+
+        side8.classList.toggle('active');
+    })
+    
+   
+
+
+    async function hmMod(){
+        const res = await fetch("/shopvistaHQ/otherp");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Home Products"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function otMod(){
+        const res = await fetch("/shopvistaHQ/otherpi");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Other Category"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+
+    async function haMod(){
+        const res = await fetch("/shopvistaHQ/appliance");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Home Appliance"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function eticalMod(){
+        const res = await fetch("/shopvistaHQ/electrical");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Electricals"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function enicMod(){
+        const res = await fetch("/shopvistaHQ/electronics");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Electronics"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function accMod(){
+        const res = await fetch("/shopvistaHQ/accessories");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Accessories"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function bmMod(){
+        const res = await fetch("/shopvistaHQ/buildingmat");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Building Materials"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function chandMod(){
+        const res = await fetch("/shopvistaHQ/chandelier");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Chanderliers"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function phoMod(){
+        const res = await fetch("/shopvistaHQ/phone");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Phones"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+            
+            
+
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');    
+    }
+    async function comMod(){
+        const res = await fetch("/shopvistaHQ/computer");
+        const data = await res.json();
+
+        document.getElementById("catt").innerText = "Computers"
+        const mainCont = document.getElementById("addheadps1")
+        const datCont = document.getElementById("datheadps1")
+        mainCont.innerHTML = "";
+        data.forEach(dataa =>{
+            const divv = document.createElement("div")
+            const hrr = document.createElement("hr")
+            divv.classList.add("autsel");
+
+            divv.innerHTML = `
+            <div class="pscat" data-id="${dataa.id}" data-name="${dataa.pName}" data-brand="${dataa.pBrand}" data-prize="${dataa.prize}" data-about="${dataa.about}" data-desc="${dataa.desc}" data-desc2="${dataa.desc2}" data-review="${dataa.rView}" data-image="${dataa.imageUrl}">
+            <div class="pscat1"><img src="../shopvistaHQ/${dataa.imageUrl}"></div>
+            <div class="pscat2">${dataa.pBrand}</div>
+            <div class="pscat3">${dataa.pName}</div>
+            <div class="pscat4">${dataa.pModel}</div>
+            <div class="pscat5">₦${dataa.prize}</div>
+            <div class="pscat6">
+                <label class="labei">Modify</label>
+               
+            </div>
+            </div>
+            `;
+
+            mainCont.appendChild(divv);
+            mainCont.appendChild(hrr);
+
+            mainCont.addEventListener("click", (e) =>{
+                if(!e.target.classList.contains("labei")) return;
+                
+                const card = e.target.closest(".pscat");
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const prize = card.dataset.prize;
+                const brand = card.dataset.brand;
+                const about = card.dataset.about;
+                const review = card.dataset.review;
+                const desc = card.dataset.desc;
+                const desc2 = card.dataset.desc2;
+                const image = card.dataset.image;
+
+                mainCont.style.display ="none";
+
+                datCont.style.display ="block";
+
+
+                datCont.innerHTML =`
+
+                <div id="addwmainps" style="padding: 0; word-wrap: break-word; height: 100px;">
+                    <div style="display: flex;flex-direction: row;width: 98%;padding: 0; word-wrap: break-word; height: 100px;">
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 60%;height: 40px; padding: 0; word-wrap: break-word; font-size: 30px;font-family: fantasy;">
+                            ${name}
+                        </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 0%; font-size: 30px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h3 style="color:#black;">Prod.</h3>
+                                <p style="color: #CD1C18;font-weight: 700;padding: 0; word-wrap: break-word;margin-right:200px;font-size: 20px;font-family: monospace;"> ${id}</p>
+                            </div>
+                        <div style="color: #0f172a;font-weight: 700;width: 10% ;  font-size: 35px;font-family: fantasy;">
+                            
+                        </div>
+                        <div style="color: #06402B;font-weight: 600;width: 15%;padding: 0; height: 30px; word-wrap: break-word; margin: 5px 55px 0px 0px; font-size: 35px;font-family: fantasy;">
+                            ₦${prize}
+                        </div>
+                        <div style="color: #CD1C18;font-weight: 700;width: 10%; margin-right: -50px; font-size: 23px;font-family: monospace;">
+                            Edit
+                        </div>
+                    </div>
+                    
+                    <div id="" style="max-height:400px;">
+                      <div style="display:flex;flex-direction: row;margin-bottom:2px;width: 96%;align-items: center;justify-content: center;">
+                        <div style="width: 40%; word-wrap: break-word;display: flex;flex-direction: column; align-items: center;justify-content: center;">
+                            <img src="../shopvistaHQ/${image}" alt="" style="height: 47px;width: 60px;">
+                        </div>
+                        <div style="width: 50%;display: flex;flex-direction: column;margin: 0px 150px 0px 150px; ">
+                            
+                            
+                            <div style="display: flex;flex-direction:row;justify-content:  space-between;">
+                                <h2 style="color:black;">#.</h2>
+                                <p style="color: #CD1C18;font-weight: 700;margin-right:150px;padding: 0; word-wrap: break-word;font-size: 23px;font-family: monospace;">${brand}</p>
+                            </div>
+                            
+                        
+                             
+                        </div>
+                      </div>  
+                      <div>
+                        <div style="margin: 0px 25px 0px 25px; display: flex;flex-direction: column;">
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word; max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">About</h3>
+                                <p style="">${about}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description</h3>
+                                <p style="">${desc}</p>
+                            </div>
+                            <div style="display:inline-flex;padding: 0; word-wrap: break-word;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Description(2)</h3>
+                                <p style="">${desc2}</p>
+                            </div>
+                            <div style="padding: 0; word-wrap: break-word; display:inline-flex;max-height: 50px; overflow-wrap:break-word;white-space: normal;">
+                                <h3 style="color:#BE5103;margin-right:20px; word-wrap: break-word;">Review</h3>
+                                <p >${review}</p>
+                            </div>
+                        </div>
+                      </div>
+   
+                    </div>
+                    <div id="backBtn" style="margin:5px 20px 0px; 0px;" >
+                      <i class="fa-solid fa-circle-left"></i>
+                    </div>
+
+                </div>
+                 
+                `;
+                document.getElementById("backBtn").addEventListener("click", () => {       
+                datCont.style.display ="none";
+                mainCont.style.display ="block";
+                
+                })
+
+
+            })
+        })
+        main.style.display="none";
+        main1.style.display="none";
+        main3.style.display="none";
+        main4.style.display="none";
+        main8.style.display="none";
+        main5.style.display="none";
+        main6.style.display="none";
+        main7.style.display="none";
+        main2.style.display="none";
+        main2ii.style.display="none";
+
+        main2i.style.display="block";
+
+        side2.classList.remove('active');   
+    }
+   
+</script>
+<script>
+    async function handelItemClick() {
+        
+    }
+</script>
+
+
+</html>

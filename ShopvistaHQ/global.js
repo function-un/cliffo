@@ -73,7 +73,7 @@ function handleCrossPageCategoryRedirect() {
     sessionStorage.setItem('pendingCategoryQuery', urlCategory);
 
     // If the user isn't on the shop page, send them there instantly
-    if (!window.location.pathname.includes('ourshop.html')) {
+    if (!window.location.pathname.includes('shop.html')) {
       window.location.href = "shop.html";
     } else {
       // Clean up the URL query parameters bar silently to prevent infinite redirection loops
@@ -97,7 +97,7 @@ function initMarketplaceSearch() {
       if (!dynamicShopGrid) {
         e.preventDefault(); 
         sessionStorage.setItem('pendingSearchQuery', userSearchKeyword);
-        window.location.href = "ourshop.html"; 
+        window.location.href = "shop.html"; 
       }
     });
   }

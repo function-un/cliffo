@@ -109,6 +109,7 @@
 
 
   <!-- Contact Us Main Section Container -->
+    <!-- Contact Us Main Section Container -->
   <main class="container">
     <div class="contact-header-block">
       <h1>Get In Touch With Us</h1>
@@ -148,13 +149,43 @@
 
       </div>
 
-      <!-- Right Column: Interactive Form Submission Panel Block -->
-       <div>
+      <!-- Right Column: Interactive WhatsApp Portals & Map Block -->
+      <div style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+        
+        <!-- Premium Chat Routing Wrapper Grid -->
+        <div class="whatsapp-premium-container">
+          
+          <!-- Card A: CEO Corporate Escalation -->
+          <a href="https://Wa.me/2348033279437" target="_blank" class="wa-premium-card">
+            <div class="wa-icon-badge">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="wa-card-body">
+              <span class="wa-tag-label">Direct Escalation</span>
+              <h5>Chat with CEO</h5>
+              <p>Corporate inquiries</p>
+            </div>
+          </a>
+
+          <!-- Card B: Operations Manager Support Desk -->
+          <a href="https://Wa.me/2348103824634" target="_blank" class="wa-premium-card">
+            <div class="wa-icon-badge">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="wa-card-body">
+              <span class="wa-tag-label">Order Operations</span>
+              <h5>Chat with Manager</h5>
+              <p>Sales & instant support</p>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Location Map Container -->
         <div id="map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!4v1748140650224!6m8!1m7!1spMnknsSU95EO4Ojz1iLd4w!2m2!1d6.497636737032017!2d3.585293274644582!3f160.97!4f-1.9200000000000017!5f1.3758882561576904" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
-                </div>
-       </div>
-      
+          <iframe src="https://www.google.com/maps/embed?pb=!4v1748140650224!6m8!1m7!1spMnknsSU95EO4Ojz1iLd4w!2m2!1d6.497636737032017!2d3.585293274644582!3f160.97!4f-1.9200000000000017!5f1.3758882561576904" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
+        </div>
+      </div>
 
     </div>
   </main>
@@ -206,7 +237,73 @@
       </div>
 
     </div>
-  
   </footer>
 
-  
+  <!-- Stylesheet Extensions for Professional UI Polish -->
+  <style>
+    .whatsapp-premium-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 23px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      font-family: 'Inter', sans-serif;
+    }
+    .wa-premium-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      padding: 16px;
+      border: 1px solid #f3f3f3;
+      border-radius: 16px;
+      background: #fafafa;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .wa-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #e8f7f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #15a85c;
+      font-size: 22px;
+      flex-shrink: 0;
+      transition: background 0.2s ease;
+    }
+    .wa-card-body .wa-tag-label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #a0a0a0;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .wa-card-body h5 {
+      margin: 0;
+      font-size: 15px;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+    .wa-card-body p {
+      margin: 3px 0 0;
+      font-size: 12px;
+      color: #666666;
+    }
+    .wa-premium-card:hover {
+      background: #ffffff !important;
+      border-color: #15a85c !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(21, 168, 92, 0.08) !important;
+    }
+    .wa-premium-card:hover .wa-icon-badge {
+      background: #15a85c !important;
+      color: #ffffff !important;
+    }
+  </style>

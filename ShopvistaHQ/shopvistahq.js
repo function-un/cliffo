@@ -1,4 +1,8 @@
-// shopvistaHQ.js - Universal Page Handler Engine
+/**
+ * shopvistaHQ.js - Universal Page Handler & Dynamic Catalog Engine
+ * Core Features: Parallel Stream Loading, Path Normalization, Cart Persistence
+ * Cliff O Global Limited - Production Standard
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const dynamicShopGrid = document.getElementById("filterableShopGrid");
   const homepageGrid = document.getElementById("marketProductGrid");
@@ -188,35 +192,192 @@ function updateHeaderTitle(categoryTitleName) {
   }
 }
 
+// FIXED & NORMALIZED: Production Ready Catalog Grid Rendering System
 function renderCatalogCards(productsArray, targetContainer) {
+  if (!targetContainer) return;
+
   const counterNode = document.getElementById('catalogResultsCounter');
   if (counterNode) {
     counterNode.textContent = `Showing ${productsArray.length} product(s) total`;
   }
 
+  // Graceful empty dataset response feedback handler
   if (productsArray.length === 0) {
-    targetContainer.innerHTML = '<div style="padding: 40px 20px; text-align: center; width: 100%; font-weight: 500; grid-column: 1 / -1;">No matching products found.</div>';
+    targetContainer.innerHTML = `
+      <div style="padding: 60px 20px; text-align: center; width: 100%; font-weight: 500; grid-column: 1 / -1; font-family: 'Inter', sans-serif;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 32px; color: #cbd5e1; margin-bottom: 12px; display: block;"></i>
+        <span style="color: #64748b; font-size: 15px;">No matching marketplace inventory items found.</span>
+      </div>
+    `;
     return;
   }
 
-  targetContainer.innerHTML = productsArray.map(item => `
-    <div class="product-card" data-product-id="${item.id}">
-      <a href="prod.html?page=${item.originFile}&id=${item.id}" style="text-decoration: none; color: inherit;">
-        <div class="tag-discount">-30%</div>
-        <div class="card-thumb">
-          <img src="../shopvistaHQ/${item.imageUrl}" alt="${item.pModel || 'Product'}" style="height:170px; object-fit: contain; width: 100%;">
-        </div>
-        <div class="card-details" style="padding: 15px;">
-          <span class="card-brand" style="display: block; font-size: 0.85rem; color: #777; text-transform: uppercase;">${item.pBrand || ''}</span>
-          <div class="card-title" style="font-weight: 600; margin: 5px 0; height: 40px; overflow: hidden;">${item.pModel || ''}</div>
-          <div class="card-meta" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-            <div class="price-box">
-              <span class="current-price" style="font-weight: bold; color: #e44d26;">#${item.prize || item.price || '0'}</span>
-            </div>
-            <div class="add-to-cart-btn" style="background: #333; color: #fff; padding: 5px 10px; border-radius: 4px;"><i class="fa fa-shopping-cart"></i></div>
-          </div>
-        </div>
-      </a>
-    </div>
-  `).join("");
+  // Generate clean premium cards mapping dynamic database object arrays
+  targetContainer.innerHTML = productsArray.map(item => {
+    // PATH FIXER: Strips away broken leading paths to route requests to the true static assets folder
+    let cleanImageSrc = 'assets/default-prod.png';
+    const rawPathString = item.pImage1 || item.imageUrl || item.image;
+    
+    if (rawPathString) {
+      let cleanString = rawPathString.replace(/^\/?(shopvistaHQ\/)?(assets\/images\/)?/, '');
+      cleanImageSrc = `assets/images/${cleanString}`;
+    }
+    
+    // Auto resolution selector parsing numeric pricing with fallback format options
+    const baseRawPrice = item.pPrice || item.prize || item.price;
+    const cleanPriceDisplay = baseRawPrice ? `₦${Number(baseRawPrice).toLocaleString()}` : 'Contact Store';
+        gridSub.innerHTML = categoryTitleName === 'All Products' ? 'Filter through our premium selected items instantly.' : `Viewing specialized items in ${categoryTitleName}.`;
+  }
 }
+
+// FIXED & NORMALIZED: Production Ready Catalog Grid Rendering System
+function renderCatalogCards(productsArray, targetContainer) {
+  if (!targetContainer) return;
+
+  const counterNode = document.getElementById('catalogResultsCounter');
+  if (counterNode) {
+    counterNode.textContent = `Showing ${productsArray.length} product(s) total`;
+  }
+
+  // Graceful empty dataset response feedback handler
+  if (productsArray.length === 0) {
+    targetContainer.innerHTML = `
+      <div style="padding: 60px 20px; text-align: center; width: 100%; font-weight: 500; grid-column: 1 / -1; font-family: 'Inter', sans-serif;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 32px; color: #cbd5e1; margin-bottom: 12px; display: block;"></i>
+        <span style="color: #64748b; font-size: 15px;">No matching marketplace inventory items found.</span>
+      </div>
+    `;
+    return;
+  }
+
+  // Generate clean premium cards mapping dynamic database object arrays
+  targetContainer.innerHTML = productsArray.map(item => {
+    // PATH FIXER: Strips away broken leading paths to route requests to the true static assets folder
+    let cleanImageSrc = 'assets/default-prod.png';
+    const rawPathString = item.pImage1 || item.imageUrl || item.image;
+    
+    if (rawPathString) {
+      let cleanString = rawPathString.replace(/^\/?(shopvistaHQ\/)?(assets\/images\/)?/, '');
+      cleanImageSrc = `assets/images/${cleanString}`;
+    }
+    
+    // Auto resolution selector parsing numeric pricing with fallback format options
+    const baseRawPrice = item.pPrice || item.prize || item.price;
+    const cleanPriceDisplay = baseRawPrice ? `₦${Number(baseRawPrice).toLocaleString()}` : 'Contact Store';
+    
+    // Computes relative dynamic clearance markup tags
+    const discountBadgeHTML = item.pDiscount 
+      ? `<div class="tag-discount" style="position: absolute; top: 12px; left: 12px; background: #ef4444; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; z-index: 2;">-${item.pDiscount}%</div>` 
+      : (item.imageUrl ? `<div class="tag-discount" style="position: absolute; top: 12px; left: 12px; background: #ef4444; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; z-index: 2;">-30%</div>` : '');
+
+    return `
+      <div class="product-card" data-product-id="${item.id || item._id}" style="position: relative; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column;">
+        ${discountBadgeHTML}
+        <a href="prod.html?page=${item.originFile}&id=${item.id || item._id}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+          
+          <div class="card-thumb" style="width: 100%; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 20px; aspect-ratio: 1/1;">
+            <img src="${cleanImageSrc}" alt="${item.pModel || 'Marketplace Item'}" style="max-height: 170px; max-width: 100%; object-fit: contain; width: auto; height: auto;">
+          </div>
+
+          <div class="card-details" style="padding: 16px; display: flex; flex-direction: column; flex-grow: 1;">
+            <span class="card-brand" style="display: block; font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px;">${item.pBrand || 'Generic'}</span>
+            <div class="card-title" style="font-weight: 600; font-size: 14px; color: #1e293b; margin: 0 0 12px 0; height: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.4;">${item.pModel || 'Elite Selected Item'}</div>
+            
+            <div class="card-meta" style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 8px;">
+              <div class="price-box">
+                <span class="current-price" style="font-weight: 700; font-size: 16px; color: #15a85c;">${cleanPriceDisplay}</span>
+              </div>
+              <div class="add-to-cart-btn" style="background: #1e293b; color: #ffffff; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; cursor: pointer;">
+                <i class="fa fa-shopping-cart" style="font-size: 12px;"></i>
+              </div>
+            </div>
+          </div>
+
+        </a>
+      </div>
+    `;
+  }).join("");
+
+  // WIRE CART ENGINE ACTION HANDLERS AFTER CARDS INTERFACE MOUNTING
+  const cartButtons = targetContainer.querySelectorAll('.add-to-cart-btn');
+  cartButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const cardParent = btn.closest('.product-card');
+      if (!cardParent) return;
+      
+      const productId = cardParent.getAttribute('data-product-id');
+      const productObject = localProductsCache.find(p => String(p.id || p._id) === String(productId));
+      if (!productObject) return;
+
+      let currentCartCollection = [];
+      try {
+        currentCartCollection = JSON.parse(localStorage.getItem('cliffoGlobalCart')) || [];
+      } catch (err) {
+        currentCartCollection = [];
+      }
+
+      const duplicateIndex = currentCartCollection.findIndex(item => String(item.id) === String(productId));
+
+      if (duplicateIndex > -1) {
+        currentCartCollection[duplicateIndex].quantity = (currentCartCollection[duplicateIndex].quantity || 1) + 1;
+      } else {
+        currentCartCollection.push({
+          id: productObject.id || productObject._id,
+          brand: productObject.pBrand || 'Generic',
+          model: productObject.pModel || 'Elite Selected Item',
+          price: productObject.pPrice || productObject.prize || productObject.price || 0,
+          image: productObject.pImage1 || productObject.imageUrl || 'assets/default-prod.png',
+          origin: productObject.originFile || 'otherp',
+          quantity: 1
+        });
+      }
+
+      localStorage.setItem('cliffoGlobalCart', JSON.stringify(currentCartCollection));
+
+      // Visual Success Interaction Animation Flash
+      const initialIcon = btn.innerHTML;
+      btn.innerHTML = `<i class="fa-solid fa-check" style="color: #ffffff;"></i>`;
+      btn.style.background = "#15a85c";
+      
+      setTimeout(() => {
+        btn.innerHTML = initialIcon;
+        btn.style.background = "#1e293b";
+      }, 1200);
+
+      synchronizeGlobalCartCounterPills();
+    });
+  });
+}
+
+// Synchronize navigation header indicators cleanly across layout templates matrices
+function synchronizeGlobalCartCounterPills() {
+  const badgeCounterNodes = [
+    document.getElementById('cartCounter'),
+    document.querySelector('.nav-actions .action-item:last-of-type .badge'),
+    document.querySelector('a[href="cart.html"] .badge')
+  ];
+
+  let currentItemsCount = 0;
+  try {
+    const rawCartData = localStorage.getItem('cliffoGlobalCart');
+    const parsedDataItems = rawCartData ? JSON.parse(rawCartData) : [];
+    currentItemsCount = parsedDataItems.reduce((accumulator, item) => accumulator + (item.quantity || 1), 0);
+  } catch (e) {
+    currentItemsCount = 0;
+  }
+
+  badgeCounterNodes.forEach(badge => {
+    if (badge) {
+      badge.textContent = currentItemsCount;
+      badge.style.transform = "scale(1.15)";
+      setTimeout(() => badge.style.transform = "scale(1)", 200);
+    }
+  });
+}
+
+// Synchronize global states on boot checking cycles
+document.addEventListener('DOMContentLoaded', synchronizeGlobalCartCounterPills);
+

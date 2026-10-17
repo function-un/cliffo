@@ -1,0 +1,283 @@
+/* Core Document Foundations Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fc;
+  color: #1a1a1a;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Master Centered Card Context Wrapper Container */
+.auth-wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02), 0 5px 15px rgba(0, 0, 0, 0.01);
+}
+
+/* Header & Brand Representation Branding Elements styles */
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.auth-brand-logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.auth-brand-logo span {
+  color: #15a85c; /* Matches your brand signature green color standard */
+}
+
+.auth-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Input Fields Forms Matrix Layout Styles block structures */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 8px;
+}
+
+.forgot-link, .auth-footer-notice a {
+  font-size: 13px;
+  color: #15a85c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgot-link:hover, .auth-footer-notice a:hover {
+  color: #0e7740;
+  text-decoration: underline;
+}
+
+.input-field-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 16px;
+  color: #aaaaaa;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input-field-wrapper input {
+  width: 100%;
+  padding: 14px 16px 14px 46px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #fafafa;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #1a1a1a;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-field-wrapper input::placeholder {
+  color: #b0b0b0;
+}
+
+.input-field-wrapper input:focus {
+  background: #ffffff;
+  border-color: #15a85c;
+  box-shadow: 0 0 0 4px rgba(21, 168, 92, 0.1);
+}
+
+.visibility-toggle-btn {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  outline: none;
+}
+
+.visibility-toggle-btn:hover {
+  color: #333333;
+}
+
+/* Custom Styled persistence remember checkbox elements configurations */
+.auth-utilities-row {
+  margin: 24px 0;
+}
+
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555555;
+  user-select: none;
+  font-weight: 500;
+}
+
+.custom-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fafafa;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox-container:hover input ~ .checkmark {
+  border-color: #15a85c;
+}
+
+.custom-checkbox-container input:checked ~ .checkmark {
+  background-color: #15a85c;
+  border-color: #15a85c;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Primary Execution CTA Form Trigger Button elements animations properties */
+.auth-submit-btn {
+  width: 100%;
+  background: #15a85c;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(21, 168, 92, 0.2);
+}
+
+.auth-submit-btn:hover {
+  background: #0e7740;
+  box-shadow: 0 6px 20px rgba(14, 119, 64, 0.3);
+  transform: translateY(-1px);
+}
+
+.auth-submit-btn:active {
+  transform: translateY(0);
+}
+
+.auth-footer-notice {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.auth-footer-notice p {
+  font-size: 13.5px;
+  color: #666666;
+}
+
+/* Small Screens Responsive Framework Media queries configurations breakpoints */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  body {
+    background-color: #ffffff;
+    align-items: flex-start;
+  }
+}
