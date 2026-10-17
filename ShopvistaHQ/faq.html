@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cliff O Global | Limited </title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="prod.css">
+  <link rel="stylesheet" href="faq.css">
+  <style>
+    /* Essential layout interaction styles */
+    .hidden-faq-group { display: none !important; }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0, 1, 0, 1); }
+    .faq-item.open .faq-body { max-height: 1000px; transition: max-height 0.3s ease-in-out; }
+    .faq-item.open .fa-chevron-down { transform: rotate(180deg); }
+    .faq-trigger i { transition: transform 0.2s ease; }
+    .faq-topic-tabs-list li { cursor: pointer; }
+    .faq-content { padding: 15px 0; line-height: 1.6; color: #555; }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Global Marketplace Header Area -->
+  <header class="header-area">
+    <div class="top-bar">
+      <div class="container">
+        <!-- Premium messaging targeted exclusively to USA & Canada -->
+        <div> ⚡ Same-day or Next-Day Delivery within Lagos & fast nationwide dispatch!</div>
+        <div class="top-bar-links">
+          <a href="track.html">Track Order</a> | 
+          <a href="faq.html">Help Center</a> |
+          <span class="currency-selector"><i class="fa-solid fa-map-pin"></i> 📦 In Stock</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="main-nav">
+        
+        <!-- Brand Logo Block Container -->
+        <div class="logo-container">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/logoh1.png" alt="" style="width: 25px; height: 25px;" >
+             CLIFFO<span>GLOBAL</span>
+          </a>
+        </div>
+
+        <!-- Central Marketplace Search Field -->
+        <div class="search-container">
+          <form id="marketplaceSearch">
+            <input type="text" id="searchInput" placeholder="Search across millions of items..." required />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+
+        <!-- Universal Desktop Sizing Action Nav Items Links -->
+        <ul class="nav-links" id="desktopNavLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ourshop.html">Our Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="cart.html">CART</a></li>
+        </ul>
+
+       <!-- Core Utility Shopping Cart / Wishlist Tracking Badges -->
+        <div class="nav-actions">
+          <div class="action-item"><i class="fa fa-heart"></i><span class="badge">0</span></div>
+          <a href="cart.html">
+            <div class="action-item"><i class="fa fa-shopping-cart"></i><span class="badge" id="cartCounter">0</span></div>
+            </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>  
+          <!-- Explicit Responsive Hamburger Trigger Icon Button for Mobile Phones -->
+      </nav>
+    </div>
+
+    <!-- Collapsible Mobile Responsive Navigation Bar Menu Strip -->
+<div class="mobile-navigation-bar" id="mobileNavigationBar">
+  <div class="container">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      
+      <!-- Categories List Item with Hamburger Toggle -->
+      <li class="mobile-dropdown">
+        <a href="#" id="categoryToggle">
+          <i class="fa fa-laptop"></i> Categories 
+          <i class="fa fa-bars toggle-icon"></i> <!-- Hamburger Icon -->
+        </a>
+        <!-- Hidden Category Items -->
+        <!-- Hidden Category Items -->
+<!-- FIXED: Redirecting to ourshop.html instead of missing standalone .html files -->
+<ul class="mobile-submenu" id="mobileSubmenu">
+  <li><a href="ourshop.html?category=Phone">Smart Phones & Tablets</a></li>
+  <li><a href="ourshop.html?category=Accesories">Accessories & Gadgets</a></li>
+  <li><a href="ourshop.html?category=Appliance">Home Appliances</a></li>
+  <li><a href="ourshop.html?category=Computer">Laptops & Desktop Computers</a></li>
+  <li><a href="ourshop.html?category=Buildingmat">Building & Construction Materials</a></li>
+  <li><a href="ourshop.html?category=Chandelier">Chanderliers & Decoration Lights </a></li>
+  <li><a href="ourshop.html?category=electrical">Electricals</a></li>
+  <li><a href="ourshop.html?category=electronics">Electronics</a></li>
+</ul>
+
+
+
+      <li><a href="ourshop.html" class="active"><i class="fa fa-store"></i> Our Shop</a></li>
+      <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+      <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart </a></li>
+    </ul>
+  </div>
+</div>
+
+  </header>
+
+
+  <!-- FAQ Knowledge Base Main Container -->
+  <main class="container">
+    <div class="faq-page-header">
+      <h1>Knowledge Base & Help Center</h1>
+      <p>Find quick answers regarding purchasing, logistics routing, or processing returns.</p>
+    </div>
+
+    <!-- Master Layout Split Grid -->
+    <div class="faq-layout-grid">
+      
+      <!-- Left Sidebar: Topic Navigation Links Matrix -->
+      <aside class="faq-sidebar-nav">
+        <div class="faq-nav-card">
+          <h3>Help Categories</h3>
+          <ul class="faq-topic-tabs-list" id="faqTopicTabsGroup">
+            <li class="active" data-target-group="shipping"><i class="fa-solid fa-truck-fast"></i> Shipping & Logistics</li>
+            <li data-target-group="payments"><i class="fa-solid fa-credit-card"></i> Orders & Payments</li>
+            <li data-target-group="returns"><i class="fa-solid fa-arrow-rotate-left"></i> Returns & Warranty</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Right Main Content Panel: Toggleable Accordion Section Groups -->
+      <div class="faq-accordion-viewport">
+        
+        <!-- SECTION 1: SHIPPING & LOGISTICS (Visible by default) -->
+        <div class="faq-group-wrapper" id="faqGroup-shipping">
+          <div class="grid-title"><span></span> Shipping & Logistics</div>
+          <div class="faq-standalone-accordion">
+            
+            <div class="faq-item">
+              <button type="button" class="faq-trigger">
+                <span>When will my tracking details become active?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                <div class="faq-content">
+                  Tracking updates usually appear within 12 to 24 hours after your order verification step. Our premium warehouse teams require this window to pack your device and register shipment manifests with domestic carrier tracking systems.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger">
+                <span>How long does delivery take across the US & Canada?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                <div class="faq-content">
+                  Express shipping takes 2 to 3 business days across major metropolitan regions via our domestic carrier networks. Standard ground shipments bound for remote or rural postal addresses take 3 to 5 business days total.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SECTION 2: ORDERS & PAYMENTS (Hidden by default) -->
+        <div class="faq-group-wrapper hidden-faq-group" id="faqGroup-payments">
+          <div class="grid-title"><span></span> Orders & Payments</div>
+          <div class="faq-standalone-accordion">
+            
+            <div class="faq-item">
+              <button type="button" class="faq-trigger">
+                <span>What payment options are securely processed?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                <div class="faq-content">
+                  We process Visa, Mastercard, American Express, and Discover credit or debit card choices securely through Stripe tokenization encryption networks. Digital wallet solutions including Apple Pay and PayPal are fully supported at checkout.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger">
+                <span>Can I cancel or modify items inside an order?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                <div class="faq-content">
+                  Orders can be modified or canceled within 60 minutes of payment validation by reaching out directly to our live ticket helpdesk support portal. Once parcel tracking numbers are provisioned by our warehouse teams, orders cannot be adjusted and must be processed as standard returns.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SECTION 3: RETURNS & WARRANTY (Hidden by default) -->
+        <div class="faq-group-wrapper hidden-faq-group" id="faqGroup-returns">
+          <div class="grid-title"><span></span> Returns & Warranty Cover</div>
+          <div class="faq-standalone-accordion">
+            
+            <div class="faq-item">
+              <button type="button" class="faq-trigger">
+                <span>What is the marketplace standard return window policy?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                <div class="faq-content">
+                  We provide a robust 30-day hassle-free return policy window from the date of arrival confirmation. Returned items must remain inside completely unaltered product packaging containing all manual checklists to clear verification audits.
+                </div>
+              </div>
+            </div>
+
+                        <!-- Fixed Warranty Content Item -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger">
+                <span>How are electronic manufacturer warranties managed?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                <div class="faq-content">
+                  All premium flagships and smart devices carry an automatic 1-year official manufacturer warranty card. If functional hardware faults arise, you can bring the invoice receipt block to any authorized regional support center across the US and Canada.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Cleaned and Structured Marketplace Footer Block Area -->
+  <footer class="global-site-footer">
+    <div class="container">
+      
+      <div class="footer-columns-row">
+        
+        <!-- Column 1: Core Company Identifier -->
+        <div class="footer-info-col">
+          <h3>CLIFFO<span>GLOBAL</span></h3>
+          <p>Your premier destination for trending high-utility gadgets and flagship consumer tech. Dispatching directly from our Lagos hub facilities to your doorstep.</p>
+          <!-- Trust Badges for Western Buyers -->
+          <div class="payment-icons">
+            <i class="fa-brands fa-cc-visa" title="Visa"></i>
+            <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+            <i class="fa-brands fa-cc-stripe" title="Stripe Secure"></i>
+          </div>
+        </div>
+
+        <!-- Column 2: Legal Policy Nodes Links Array -->
+        <div class="footer-links-col">
+          <h4>Legal Information</h4>
+          <ul>
+            <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            <li><a href="refund.html"><i class="fa-solid fa-arrow-rotate-left"></i> Refund Policy</a></li>
+            <li><a href="terms.html"><i class="fa-solid fa-scale-balanced"></i> Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Support Assistance Links Array -->
+        <div class="footer-links-col">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> Help FAQ Base</a></li>
+            <li><a href="track.html"><i class="fa-solid fa-truck-fast"></i> Shipping Policy</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Copyright Registration Sub-Strip -->
+      <div class="footer-copyright-substrip">
+        <p><strong>Cliff O Global Limited.</strong> - © 2026 All Rights Reserved.</p>
+      </div>
+
+    </div>
+  
+  </footer>
+  <script src="global.js"></script>
+  <script src="shopvistahq.js"></script>
+
+  <script>
+    // Interactivity engine for handling FAQ category updates and accordion states
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // 1. Sidebar Category Tabs Navigation Handler
+      const tabItems = document.querySelectorAll('#faqTopicTabsGroup li');
+      const groups = document.querySelectorAll('.faq-group-wrapper');
+
+      tabItems.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabItems.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const targetGroup = tab.getAttribute('data-target-group');
+          groups.forEach(group => {
+            // FIXED: Added necessary template string literal backticks here to resolve evaluation crashes
+            if (group.id === `faqGroup-${targetGroup}`) {
+              group.classList.remove('hidden-faq-group');
+            } else {
+              group.classList.add('hidden-faq-group');
+            }
+          });
+        });
+      });
+
+      // 2. Slide Accordion Transition Panel Animation System
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        if (trigger) {
+          trigger.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            
+            // Close other elements to keep clean user layout states
+            faqItems.forEach(i => i.classList.remove('open'));
+            
+            // Toggle local selection item status
+            if (!isOpen) {
+              item.classList.add('open');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

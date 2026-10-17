@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cliff O Global | Limited </title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="prod.css">
+  <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+  <!-- Sticky Global Marketplace Header Area -->
+  <header class="header-area">
+    <div class="top-bar">
+      <div class="container">
+        <!-- FIXED: Premium messaging targeted exclusively to USA & Canada -->
+        <div>⚡ Same-day or Next-Day Delivery within Lagos & fast nationwide dispatch!</div>
+        <div class="top-bar-links">
+          <a href="track.html">Track Order</a> | 
+          <a href="faq.html">Help Center</a> |
+          <span class="currency-selector"><i class="fa-solid fa-map-pin"></i> 📦 In Stock</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+      <nav class="main-nav">
+        
+        <!-- Brand Logo Block Container -->
+        <div class="logo-container">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/logoh1.png" alt="" style="width: 25px; height: 25px;" >
+             CLIFFO<span>GLOBAL</span>
+          </a>
+        </div>
+
+        <!-- Central Marketplace Search Field -->
+        <div class="search-container">
+          <form id="marketplaceSearch">
+            <input type="text" id="searchInput" placeholder="Search across millions of items..." required />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+
+        <!-- Universal Desktop Sizing Action Nav Items Links -->
+        <ul class="nav-links" id="desktopNavLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ourshop.html" class="active">Our Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="cart.html">CART</a></li>
+        </ul>
+
+       <!-- Core Utility Shopping Cart / Wishlist Tracking Badges -->
+        <div class="nav-actions">
+          <div class="action-item"><i class="fa fa-heart"></i><span class="badge">0</span></div>
+          <a href="cart.html">
+            <div class="action-item"><i class="fa fa-shopping-cart"></i><span class="badge" id="cartCounter">0</span></div>
+            </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>  
+          <!-- Explicit Responsive Hamburger Trigger Icon Button for Mobile Phones -->
+      </nav>
+    </div>
+
+    <!-- Collapsible Mobile Responsive Navigation Bar Menu Strip -->
+<div class="mobile-navigation-bar" id="mobileNavigationBar">
+  <div class="container">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="active"><i class="fa fa-home"></i> Home</a></li>
+      
+      <!-- Categories List Item with Hamburger Toggle -->
+      <li class="mobile-dropdown">
+        <a href="#" id="categoryToggle">
+          <i class="fa fa-laptop"></i> Categories 
+          <i class="fa fa-bars toggle-icon"></i> <!-- Hamburger Icon -->
+        </a>
+        <!-- Hidden Category Items -->
+        <!-- Hidden Category Items -->
+<!-- FIXED: Redirecting to ourshop.html instead of missing standalone .html files -->
+<ul class="mobile-submenu" id="mobileSubmenu">
+  <li><a href="ourshop.html?category=Phone">Smart Phones & Tablets</a></li>
+  <li><a href="ourshop.html?category=Accesories">Accessories & Gadgets</a></li>
+  <li><a href="ourshop.html?category=Appliance">Home Appliances</a></li>
+  <li><a href="ourshop.html?category=Computer">Laptops & Desktop Computers</a></li>
+  <li><a href="ourshop.html?category=Buildingmat">Building & Construction Materials</a></li>
+  <li><a href="ourshop.html?category=Chandelier">Chanderliers & Decoration Lights </a></li>
+  <li><a href="ourshop.html?category=electrical">Electricals</a></li>
+  <li><a href="ourshop.html?category=electronics">Electronics</a></li>
+</ul>
+
+
+
+      <li><a href="ourshop.html" class="active"><i class="fa fa-store"></i> Our Shop</a></li>
+      <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+      <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart </a></li>
+    </ul>
+  </div>
+</div>
+
+  </header>
+
+
+  <!-- Products Catalog Wrapper -->
+  <main class="container">
+    
+    <div class="products-header-block">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &gt; All Products
+      </div>
+      <h1>Premium Device Collections</h1>
+    </div>
+
+    <!-- Toolbar Options Control Strip -->
+    <div class="catalog-toolbar">
+      <div class="toolbar-left">
+        <span id="productsCounterLabel">Showing 5 items</span>
+      </div>
+      <div class="toolbar-right">
+        
+        <!-- Live Sub-Filtering Keyword Search Box -->
+        <div class="toolbar-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="catalogKeywordFilter" placeholder="Filter current view...">
+        </div>
+
+        <!-- Sort dropdown filter matrix -->
+        <div class="sort-select-wrapper">
+          <label for="catalogSorterSelect">Sort By:</label>
+          <select id="catalogSorterSelect">
+            <option value="default">Default Order</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+
+        <!-- View layout mode toggler button grid boxes -->
+        <div class="view-mode-toggles">
+          <button type="button" class="view-toggle-btn active" id="setViewGrid" title="Grid View"><i class="fa-solid fa-grid-2-large"></i><i class="fa-solid fa-th"></i></button>
+          <button type="button" class="view-toggle-btn" id="setViewList" title="List View"><i class="fa-solid fa-list"></i></button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Main Dynamic Catalog Container -->
+    <section class="product-grid layout-grid-mode" id="masterCatalogGrid">
+      
+      <!-- Card 1 -->
+      <div class="product-card" data-price="185000" data-title="Sony WH-1000XM4 Noise Cancelling Over-Ear Headphones Bundle">
+        <a href="prod.html">
+          <div class="tag-discount">-30%</div>
+          <div class="card-thumb">
+            <img src="https://unsplash.com" alt="Product">
+          </div>
+          <div class="card-details">
+            <span class="card-brand">Sony Audio</span>
+            <div class="card-title">WH-1000XM4 Wireless Intelligent Noise Cancelling Over-Ear Headphones Bundle</div>
+            <div class="card-meta">
+              <div class="price-box">
+                <span class="current-price">₦185,000</span>
+                <span class="old-price">₦250,000</span>
+              </div>
+              <div class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card" data-price="45000" data-title="Premium Brushed Stainless Steel Quartz Analog Sports Luxury Wrist Watch">
+        <div class="tag-discount">HOT</div>
+        <div class="card-thumb">
+          <img src="https://unsplash.com" alt="Product">
+        </div>
+        <div class="card-details">
+          <span class="card-brand">Minimalist Lab</span>
+          <div class="card-title">Premium Brushed Stainless Steel Quartz Analog Sports Luxury Wrist Watch</div>
+          <div class="card-meta">
+            <div class="price-box">
+              <span class="current-price">₦45,000</span>
+            </div>
+            <div class="add-to-cart-btn"><i class="fa fa-shopping-bag"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card" data-price="95000" data-title="Sony WF-1000XM4 True Wireless Noise Cancelling In-Ear Smart Earbuds">
+        <div class="card-thumb">
+          <img src="https://unsplash.com" alt="Product">
+        </div>
+        <div class="card-details">
+          <span class="card-brand">Sony Audio</span>
+          <div class="card-title">WF-1000XM4 True Wireless Noise Cancelling In-Ear Smart Earbuds</div>
+          <div class="card-meta">
+            <div class="price-box">
+              <span class="current-price">₦95,000</span>
+            </div>
+            <div class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card" data-price="38000" data-title="Mechanical Compact RGB Backlit Gaming Keyboard Pack Dual Wireless">
+        <div class="tag-discount">-15%</div>
+        <div class="card-thumb">
+          <img src="https://unsplash.com" alt="Product">
+        </div>
+        <div class="card-details">
+          <span class="card-brand">ProStream</span>
+          <div class="card-title">Mechanical Compact RGB Backlit Gaming Keyboard Pack Dual Wireless</div>
+          <div class="card-meta">
+            <div class="price-box">
+              <span class="current-price">₦38,000</span>
+              <span class="old-price">₦45,000</span>
+            </div>
+            <div class="add-to-cart-btn"><i class="fa fa-shopping-bag"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card" data-price="420000" data-title="Premium Ultra Slim Flagship Laptop Quad HD Display Pro 16GB RAM">
+        <div class="tag-discount">PREMIUM</div>
+        <div class="card-thumb">
+          <img src="https://unsplash.com" alt="Product">
+        </div>
+        <div class="card-details">
+          <span class="card-brand">VaporComputing</span>
+          <div class="card-title">Premium Ultra Slim Flagship Laptop Quad HD Display Pro 16GB RAM</div>
+          <div class="card-meta">
+            <div class="price-box">
+              <span class="current-price">₦420,000</span>
+            </div>
+            <div class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Fallback empty catalog view screen display -->
+    <div class="catalog-empty-fallback hidden" id="catalogEmptyFallback">
+      <i class="fa-solid fa-circle-info"></i>
+      <h3>No Products Found</h3>
+      <p>Try tweaking your filter phrases or browse other luxury tags available.</p>
+    </div>
+
+    <!-- Pagination Navigation Elements Module Block Row -->
+    <div class="pagination-row">
+      <button class="pag-btn disabled" disabled><i class="fa-solid fa-angle-left"></i> Prev</button>
+      <button class="pag-number active">1</button>
+      <button class="pag-number">2</button>
+      <button class="pag-number">3</button>
+      <button class="pag-btn">Next <i class="fa-solid fa-angle-right"></i></button>
+    </div>
+
+  </main>
+
+  <!-- Footer Block -->
+  <!-- Upgraded Marketplace Footer Block Area -->
+  <footer class="global-site-footer">
+    <div class="container">
+      
+      <div class="footer-columns-row">
+        
+        <!-- Column 1: Core Company Identifier -->
+        <div class="footer-info-col">
+          <h3>CLIFFO<span>GLOBAL</span></h3>
+          <p>Your premier destination for trending high-utility gadgets and flagship consumer tech. Dispatching directly from our Lagos hub facilities to your doorstep.</p>
+          <!-- Trust Badges for Western Buyers -->
+          <div class="payment-icons">
+            <i class="fa-brands fa-cc-visa" title="Visa"></i>
+            <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+            <i class="fa-brands fa-cc-stripe" title="Stripe Secure"></i>
+          </div>
+        </div>
+
+        <!-- Column 2: Legal Policy Nodes Links Array -->
+        <div class="footer-links-col">
+          <h4>Legal Information</h4>
+          <ul>
+            <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            <li><a href="refund.html"><i class="fa-solid fa-arrow-rotate-left"></i> Refund Policy</a></li>
+            <li><a href="terms.html"><i class="fa-solid fa-scale-balanced"></i> Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Support Assistance Links Array -->
+        <div class="footer-links-col">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> Help FAQ Base</a></li>
+            <li><a href="track.html"><i class="fa-solid fa-truck-fast"></i> Shipping Policy</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Copyright Registration Sub-Strip -->
+      <div class="footer-copyright-substrip">
+        <p><strong>Cliff O Global Limited.</strong> - © 2026 All Rights Reserved.</p>
+      </div>
+
+    </div>
+  
+  </footer>
+
+  <script src="global.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>

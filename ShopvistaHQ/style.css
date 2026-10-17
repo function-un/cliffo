@@ -1,0 +1,170 @@
+/* Core Structural Blueprint Configurations */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f5f9;
+  color: #333333;
+  padding-top: 140px; /* Buffer space preventing desktop header block overlap errors */
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { width: 100%; display: block; }
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Area Engine Setup */
+.header-area {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background-color: #004aad;
+  color: #ffffff;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.top-bar {
+  background-color: #003580;
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+}
+.logo-container .brand-logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+.logo-container .brand-logo span { color: #ee626b; }
+
+/* Desktop Input Search Bar Container */
+.search-container {
+  flex-grow: 1;
+  max-width: 420px;
+  margin: 0 30px;
+}
+.search-container form {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.search-container input {
+  width: 100%; height: 42px; border-radius: 21px; border: none; padding: 0 100px 0 20px; font-size: 14px; outline: none; color: #333333;
+}
+.search-container button {
+  position: absolute; right: 0; top: 0; height: 42px; background-color: #ee626b; border: none; color: #ffffff; padding: 0 22px; border-radius: 0 21px 21px 0; cursor: pointer; font-weight: 600;
+}
+
+/* Header link lists - displays natively on desktop layouts */
+.nav-links { display: flex; align-items: center; gap: 20px; margin-bottom: 0; padding-left: 0; }
+.nav-links li a { font-size: 14px; font-weight: 500; color: #ffffff; padding: 8px 12px; border-radius: 15px; transition: all 0.3s; }
+.nav-links li a:hover, .nav-links li a.active { background-color: #ee626b; color: #ffffff !important; }
+
+/* Control Action Badges */
+.nav-actions { display: flex; align-items: center; gap: 20px; }
+.action-item { cursor: pointer; position: relative; font-size: 20px; }
+.action-item .badge { position: absolute; top: -8px; right: -8px; background-color: #ee626b; color: #ffffff; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 10px; }
+
+/* Mobile Menu Action Icon Trigger Design */
+.mobile-nav-toggle {
+  display: none; background: none; border: none; cursor: pointer; width: 28px; height: 24px; position: relative; flex-direction: column; justify-content: space-between;
+}
+.mobile-nav-toggle span { display: block; width: 100%; height: 3px; background-color: #ffffff; border-radius: 2px; transition: all 0.3s ease; }
+
+/* Interactive Dropdown Mobile Menu System Panel container */
+.mobile-navigation-bar {
+  display: none; width: 100%; background-color: #ffffff; border-top: 1px solid #e2e8f0; max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.mobile-navigation-bar.open {
+  display: block; max-height: 300px; /* Adjust scale based on route nodes content length footprint */
+}
+.mobile-nav-links { padding: 15px 0; }
+.mobile-nav-links li a { display: flex; align-items: center; gap: 12px; padding: 12px 10px; font-size: 15px; font-weight: 500; color: #2d3748; border-bottom: 1px solid #f1f5f9; }
+.mobile-nav-links li a i { color: #718096; width: 20px; }
+.mobile-nav-links li a:hover, .mobile-nav-links li a.active { color: #ee626b; background-color: #fff5f5; }
+.mobile-nav-links li a:hover i, .mobile-nav-links li a.active i { color: #ee626b; }
+
+/* Category Desktop Filter Bar strip */
+.category-bar { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 12px 0; }
+.category-bar ul { display: flex; gap: 30px; font-size: 14px; font-weight: 500; color: #4a5568; }
+.category-bar ul li { cursor: pointer; }
+.category-bar ul li:hover, .category-bar ul li.active { color: #004aad; }
+
+/* Showcases Promotion Cards */
+.hero-section { margin: 30px 0; }
+.hero-banner { background: linear-gradient(135deg, #004aad 0%, #0071f8 100%); border-radius: 20px; padding: 60px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; min-height: 380px; }
+.hero-content { max-width: 550px; }
+.hero-content h2 { font-size: 46px; font-weight: 800; line-height: 1.1; margin-bottom: 15px; }
+.hero-content p { font-size: 18px; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
+.hero-btn { display: inline-block; background-color: #ee626b; color: #ffffff; font-weight: 600; padding: 14px 35px; border-radius: 25px; }
+.hero-image { max-width: 450px; }
+
+/* Standard Elastic Product Gallery Grid Layout attributes */
+.grid-title { font-size: 24px; font-weight: 700; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+.grid-title span { width: 4px; height: 24px; background-color: #ee626b; display: inline-block; border-radius: 2px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-bottom: 50px; }
+
+.product-card { background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02); transition: transform 0.3s, box-shadow 0.3s; position: relative; cursor: pointer; display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+.card-thumb { position: relative; background-color: #f8fafc; padding-top: 100%; overflow: hidden; }
+.card-thumb img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.tag-discount { position: absolute; top: 12px; left: 12px; background-color: #ee626b; color: #ffffff; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 6px; z-index: 10; }
+.card-details { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+.card-brand { font-size: 12px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+.card-title { font-size: 14px; font-weight: 500; color: #334155; line-height: 1.4; height: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 12px; }
+.card-meta { display: flex; justify-content: space-between; align-items: flex-end; margin-top: auto; }
+.price-box .current-price { font-size: 18px; font-weight: 700; color: #ee626b; }
+.price-box .old-price { font-size: 12px; color: #94a3b8; text-decoration: line-through; margin-left: 4px; }
+.add-to-cart-btn { width: 36px; height: 36px; background-color: #004aad; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+footer { background-color: #002244; color: #94a3b8; padding: 40px 0; text-align: center; font-size: 14px; margin-top: 60px; border-top: 4px solid #ee626b; }
+
+/* ==========================================================================
+   INTERACTIVE MOBILE PORT OVERRIDES BREAKPOINTS (767px and down)
+   ========================================================================== */
+@media (max-width: 991px) {
+  body { padding-top: 130px; }
+  .search-container { max-width: 300px; }
+  .hero-banner { padding: 40px; flex-direction: column; text-align: center; }
+  .hero-content { max-width: 100%; margin-bottom: 20px; }
+}
+
+@media (max-width: 767px) {
+  body { padding-top: 145px; }
+  .top-bar, #desktopNavLinks, .category-bar { display: none !important; } /* Safe exclusion of bloated desktop-only panels */
+  
+  .main-nav { flex-wrap: wrap; padding: 15px 0; height: auto; position: relative; }
+  .logo-container { width: auto; }
+  
+  /* Enables responsive hamburger toggle bar icon display grid */
+  .mobile-nav-toggle { display: flex; }
+  
+  /* Expand the Mobile Search Bar full-width under the logo block */
+  .search-container { width: 100%; max-width: 100%; margin: 15px 0 0 0; order: 3; }
+  .search-container input { height: 44px; }
+  .search-container button { height: 44px; }
+
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}

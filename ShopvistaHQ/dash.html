@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ShopvistaHQ | Marketplace</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="prod.css">
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+
+  <!-- Sticky Global Marketplace Header Area -->
+  <header class="header-area">
+    <div class="top-bar">
+      <div class="container">
+        <!-- FIXED: Premium messaging targeted exclusively to USA & Canada -->
+        <div>⚡ Fast 2-3 Day Express Shipping across the US & Canada over $50!</div>
+        <div class="top-bar-links">
+          <a href="track.html">Track Order</a> | 
+          <a href="faq.html">Help Center</a> |
+          <span class="currency-selector"><i class="fa-solid fa-map-pin"></i> 📦 In Stock</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+      <nav class="main-nav">
+        
+        <!-- Brand Logo Block Container -->
+        <div class="logo-container">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/logoh1.png" alt="" style="width: 25px; height: 25px;" >
+             CLIFFO<span>GLOBAL</span>
+          </a>
+        </div>
+
+        <!-- Central Marketplace Search Field -->
+        <div class="search-container">
+          <form id="marketplaceSearch">
+            <input type="text" id="searchInput" placeholder="Search across millions of items..." required />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+
+        <!-- Universal Desktop Sizing Action Nav Items Links -->
+        <ul class="nav-links" id="desktopNavLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ourshop.html" class="active">Our Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="cart.html">CART</a></li>
+        </ul>
+
+       <!-- Core Utility Shopping Cart / Wishlist Tracking Badges -->
+        <div class="nav-actions">
+          <div class="action-item"><i class="fa fa-heart"></i><span class="badge">0</span></div>
+          <a href="cart.html">
+            <div class="action-item"><i class="fa fa-shopping-cart"></i><span class="badge" id="cartCounter">0</span></div>
+            </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>  
+          <!-- Explicit Responsive Hamburger Trigger Icon Button for Mobile Phones -->
+      </nav>
+    </div>
+
+    <!-- Collapsible Mobile Responsive Navigation Bar Menu Strip -->
+<div class="mobile-navigation-bar" id="mobileNavigationBar">
+  <div class="container">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="active"><i class="fa fa-home"></i> Home</a></li>
+      
+      <!-- Categories List Item with Hamburger Toggle -->
+      <li class="mobile-dropdown">
+        <a href="#" id="categoryToggle">
+          <i class="fa fa-laptop"></i> Categories 
+          <i class="fa fa-bars toggle-icon"></i> <!-- Hamburger Icon -->
+        </a>
+        <!-- Hidden Category Items -->
+        <!-- Hidden Category Items -->
+<!-- FIXED: Redirecting to ourshop.html instead of missing standalone .html files -->
+<ul class="mobile-submenu" id="mobileSubmenu">
+  <li><a href="ourshop.html?category=Phone">Smart Phones & Tablets</a></li>
+  <li><a href="ourshop.html?category=Accesories">Accessories & Gadgets</a></li>
+  <li><a href="ourshop.html?category=Appliance">Home Appliances</a></li>
+  <li><a href="ourshop.html?category=Computer">Laptops & Desktop Computers</a></li>
+  <li><a href="ourshop.html?category=Buildingmat">Building & Construction Materials</a></li>
+  <li><a href="ourshop.html?category=Chandelier">Chanderliers & Decoration Lights </a></li>
+  <li><a href="ourshop.html?category=electrical">Electricals</a></li>
+  <li><a href="ourshop.html?category=electronics">Electronics</a></li>
+</ul>
+
+
+
+      <li><a href="ourshop.html" class="active"><i class="fa fa-store"></i> Our Shop</a></li>
+      <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+      <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart </a></li>
+    </ul>
+  </div>
+</div>
+
+  </header>
+
+
+  <!-- Dashboard Frame Layout Main Box -->
+  <main class="container">
+    
+    <!-- User Banner Introduction Strip -->
+    <div class="dashboard-user-hero">
+      <div class="user-avatar-circle">JD</div>
+      <div class="user-hero-meta">
+        <h2>Welcome back, <span id="dashGreetingName">John Doe</span>!</h2>
+        <p>Manage your account parameters, delivery destinations, and logistics order history logs.</p>
+      </div>
+    </div>
+
+    <!-- Master Layout Split Grid Layout -->
+    <div class="dashboard-layout-grid">
+      
+      <!-- Left Sidebar Column: Controller Section Tabs -->
+      <aside class="dashboard-sidebar-nav">
+        <ul class="dash-tabs-list" id="dashboardTabsGroup">
+          <li class="active" data-dash-target="overview"><i class="fa-solid fa-gauge-high"></i> Dashboard Overview</li>
+          <li data-dash-target="orders"><i class="fa-solid fa-clock-rotate-left"></i> My Purchase Orders</li>
+          <li data-dash-target="profile"><i class="fa-solid fa-user-gear"></i> Profile Information</li>
+          <li class="dash-logout-pill" id="dashboardLogoutTrigger"><i class="fa-solid fa-power-off"></i> Sign Out</li>
+        </ul>
+      </aside>
+
+      <!-- Right Content Column: Panel Screen Swappable Windows -->
+      <div class="dashboard-viewport-panels">
+        
+        <!-- PANEL 1: DASHBOARD OVERVIEW (Active by Default) -->
+        <div class="dash-panel-window" id="dashPanel-overview">
+          <div class="grid-title"><span></span> Dashboard Overview</div>
+          
+          <!-- Mini Info Quick Metrics Grid Row -->
+          <div class="overview-metrics-grid">
+            <div class="metric-box-card">
+              <div class="metric-icon purple"><i class="fa-solid fa-basket-shopping"></i></div>
+              <div class="metric-text">
+                <h3>Total Orders</h3>
+                <strong>1 Placed</strong>
+              </div>
+            </div>
+            <div class="metric-box-card">
+              <div class="metric-icon green"><i class="fa-solid fa-truck-fast"></i></div>
+              <div class="metric-text">
+                <h3>Active Shipment</h3>
+                <strong>1 In Transit</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Access Profile Card Snapshot Summary -->
+          <div class="overview-summary-card">
+            <h4>Primary Delivery Destination Address</h4>
+            <p id="overviewAddressSnapshot">No billing destination address saved yet. Update your profile info window tabs settings section.</p>
+          </div>
+        </div>
+
+        <!-- PANEL 2: MY PURCHASE ORDERS (Hidden by Default) -->
+        <div class="dash-panel-window hidden-dash-panel" id="dashPanel-orders">
+          <div class="grid-title"><span></span> My Purchase Orders</div>
+          
+          <div class="orders-log-table-wrapper">
+            <!-- Header (Desktop view alignment baseline anchor text blocks) -->
+            <div class="orders-table-header">
+              <span>Order Reference</span>
+              <span>Purchase Date</span>
+              <span>Total Price</span>
+              <span>Logistics Status</span>
+              <span>Actions</span>
+            </div>
+
+            <!-- List entries -->
+            <div class="orders-rows-container">
+              <div class="order-log-row">
+                <span class="order-cell-id" data-lbl="Order ID">SV-12345</span>
+                <span class="order-cell-date" data-lbl="Date">June 23, 2026</span>
+                <span class="order-cell-total" data-lbl="Total">₦188,500</span>
+                <span class="order-cell-status status-transit" data-lbl="Logistics">In Transit</span>
+                <div class="order-cell-actions">
+                  <a href="track.html" class="order-row-action-btn"><i class="fa-solid fa-location-crosshairs"></i> Track Live</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PANEL 3: PROFILE INFORMATION (Hidden by Default) -->
+        <div class="dash-panel-window hidden-dash-panel" id="dashPanel-profile">
+          <div class="grid-title"><span></span> Profile Information & Addresses</div>
+          
+          <div class="profile-editor-wrapper">
+            <form id="dashProfileUpdateForm">
+              
+              <div class="editor-section-block">
+                <h3>Contact Credentials Details</h3>
+                <div class="editor-form-row">
+                  <div class="editor-group-item">
+                    <label for="dashEditFirstName">First Name *</label>
+                    <input type="text" id="dashEditFirstName" value="John" required>
+                  </div>
+                  <div class="editor-group-item">
+                    <label for="dashEditLastName">Last Name *</label>
+                    <input type="text" id="dashEditLastName" value="Doe" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="editor-section-block">
+                <h3>Default Logistics Shipping Destination</h3>
+                <div class="editor-form-group-full">
+                  <label for="dashEditStreet">Street Address *</label>
+                  <input type="text" id="dashEditStreet" value="12, Allen Avenue" required>
+                </div>
+                <div class="editor-form-row">
+                  <div class="editor-group-item">
+                    <label for="dashEditState">State Location *</label>
+                    <input type="text" id="dashEditState" value="Lagos" required>
+                  </div>
+                  <div class="editor-group-item">
+                    <label for="dashEditCity">City Territory *</label>
+                    <input type="text" id="dashEditCity" value="Ikeja" required>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="submit-profile-update-btn" id="dashProfileSaveBtn">
+                <i class="fa-solid fa-floppy-disk"></i> Save Profile Modifications
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Block -->
+  <!-- Upgraded Marketplace Footer Block Area -->
+  <footer class="global-site-footer">
+    <div class="container">
+      
+      <div class="footer-columns-row">
+        
+        <!-- Column 1: Core Company Identifier -->
+        <div class="footer-info-col">
+          <h3>Shopvista<span>HQ</span></h3>
+          <p>Your premier global marketplace for trending high-utility gadgets and flagship consumer tech. Dispatching directly from local hub facilities to your doorstep.</p>
+          <!-- Trust Badges for Western Buyers -->
+          <div class="payment-icons">
+            <i class="fa-brands fa-cc-visa" title="Visa"></i>
+            <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+            <i class="fa-brands fa-cc-stripe" title="Stripe Secure"></i>
+          </div>
+        </div>
+
+        <!-- Column 2: Legal Policy Nodes Links Array -->
+        <div class="footer-links-col">
+          <h4>Legal Information</h4>
+          <ul>
+            <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            <li><a href="refund.html"><i class="fa-solid fa-arrow-rotate-left"></i> Refund Policy</a></li>
+            <li><a href="terms.html"><i class="fa-solid fa-scale-balanced"></i> Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Support Assistance Links Array -->
+        <div class="footer-links-col">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> Help FAQ Base</a></li>
+            <li><a href="track.html"><i class="fa-solid fa-truck-fast"></i> Shipping Policy</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Copyright Registration Sub-Strip -->
+      <div class="footer-copyright-substrip">
+        <p><strong>ShopvistaHQ Inc.</strong> - © 2026 All Rights Reserved.</p>
+      </div>
+
+    </div>
+  
+  </footer>
+
+  <script src="global.js"></script>
+  <script src="dash.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cliff O Global | Secure Checkout</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  
+  <!-- ✅ FIXED: High-speed verified FontAwesome asset library link -->
+  <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ✅ FIXED: Official Paystack InlineJS V2 Library Script Endpoint -->
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+
+  <link rel="stylesheet" href="prod.css">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+  <!-- Sticky Global Header Area -->
+  <header class="header-area">
+    <div class="top-bar">
+      <div class="container">
+        <div>⚡ Same-day or Next-Day Delivery within Lagos & fast nationwide dispatch!</div>
+        <div class="top-bar-links">
+          <a href="track.html">Track Order</a> | 
+          <a href="faq.html">Help Center</a> |
+          <span class="currency-selector"><i class="fa-solid fa-map-pin"></i> 📦 In Stock</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="main-nav">
+        <!-- Brand Logo Block Container -->
+        <div class="logo-container">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/logoh1.png" alt="Logo" style="width: 25px; height: 25px;">
+             CLIFFO<span>GLOBAL</span>
+          </a>
+        </div>
+
+        <!-- Central Search Field -->
+        <div class="search-container">
+          <form id="marketplaceSearch">
+            <input type="text" id="searchInput" placeholder="Search across millions of items..." required />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+
+        <!-- Desktop Navigation Actions Links -->
+        <ul class="nav-links" id="desktopNavLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ourshop.html">Our Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="cart.html" class="active">CART</a></li>
+        </ul>
+
+        <!-- Shopping Cart Tracking Badges -->
+        <div class="nav-actions">
+          <div class="action-item"><i class="fa fa-heart"></i><span class="badge">0</span></div>
+          <a href="cart.html">
+            <div class="action-item"><i class="fa fa-shopping-cart"></i><span class="badge" id="cartCounter">0</span></div>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>  
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Checkout Interface Content Grid Grid -->
+  <main class="container" style="padding-top: 30px; margin-bottom: 60px;">
+    <div class="checkout-title-block">
+      <h1>Secure Checkout</h1>
+      <p>Please review your order summary and fill out your delivery parameters below.</p>
+    </div>
+
+    <div class="checkout-grid">
+      <!-- Left Column: Address Entry Form Elements -->
+      <div class="checkout-form-section">
+        <form id="checkoutForm">
+          
+          <div class="form-card-block">
+            <h3><i class="fa-solid fa-user"></i> Customer Information</h3>
+            <div class="form-row-split">
+              <div class="form-group-item">
+                <label for="name">First Name *</label>
+                <input type="text" id="name" required>
+              </div>
+              <div class="form-group-item">
+                <label for="checkoutLastName">Last Name *</label>
+                <input type="text" id="checkoutLastName" required>
+              </div>
+            </div>
+            <div class="form-row-split">
+              <div class="form-group-item">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" required>
+              </div>
+              <div class="form-group-item">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" placeholder="e.g., 08031234567" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card-block">
+            <h3><i class="fa-solid fa-truck"></i> Delivery Address</h3>
+            <div class="form-group-item">
+              <label for="address">Street Address *</label>
+              <input type="text" id="address" placeholder="House number, street name, apartment or estate details" required>
+            </div>
+            <div class="form-row-split">
+              <div class="form-group-item">
+                <label for="checkoutCity">City / Town *</label>
+                <input type="text" id="checkoutCity" placeholder="e.g. Ikeja, Lekki" required>
+              </div>
+              <div class="form-group-item">
+                <label for="checkoutState">State *</label>
+                <input type="text" id="checkoutState" placeholder="e.g. Lagos" required>
+              </div>
+            </div>
+            <div class="form-group-item" style="margin-top: 15px;">
+              <label for="checkoutZip">Postal / Zip Code (Optional)</label>
+              <input type="text" id="checkoutZip" placeholder="e.g., 100001">
+            </div>
+          </div>
+
+          <div class="form-card-block">
+            <h3><i class="fa-solid fa-credit-card"></i> Payment Processing Method</h3>
+            <div class="payment-options-list">
+              <label class="payment-radio-tile active">
+                <span class="payment-tile-content">
+                  <strong>Secure Online Payment (Paystack Gateway)</strong>
+                  <span class="payment-sub-label">Supports Visa, Mastercard, Verve, and Direct Bank Transfers instantly.</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-checkout-order-btn" id="placeOrderSubmitBtn">
+            <i class="fa-solid fa-lock"></i> Place Order Securely (₦0.00)
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Right Column: Summary Panel -->
+      <div class="checkout-summary-section">
+        <div class="summary-sticky-card">
+          <h3>Order Summary</h3>
+          <div class="summary-items-list" id="checkoutSummaryItems">
+            <!-- Dynamic rows drop here dynamically via renderCheckoutSummary -->
+          </div>
+
+          <div class="summary-receipt-rows" style="margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 15px;">
+            <div class="cart-receipt-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span>Subtotal</span>
+              <span id="checkoutSubtotalValue">₦0.00</span>
+            </div>
+            <div class="cart-receipt-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span>Shipping</span>
+              <span style="color: #22c55e; font-weight: 600;">FREE</span>
+            </div>
+            <div class="cart-receipt-row total-highlight-row" style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 18px; font-weight: 700;">
+              <span>Total</span>
+              <strong id="checkoutEstimatedTotalValue">₦0.00</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="global-site-footer">
+    <div class="container" style="padding: 30px 15px; text-align: center; border-top: 1px solid #e2e8f0;">
+      <p><strong>Cliff O Global Limited.</strong> - © 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="global.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

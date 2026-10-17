@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Invoice SV-12345 - CliffOGlobal Limited </title>
+  <!-- Google Fonts Connection Layer Link -->
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <!-- FontAwesome Icon CDN Resource -->
+  
+  <!-- ✅ PASTE THIS WORKING LINK INSTEAD -->
+<link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+  <!-- FIXED: Changed link from prod.css to use your dedicated invoice.css file -->
+  <link rel="stylesheet" href="invoice.css">
+</head>
+<body class="invoice-body-wrapper">
+
+  <!-- Interactive Action Toolbar (Hidden automatically during printing) -->
+  <div class="invoice-actions-toolbar">
+    <div class="toolbar-container">
+      <a href="index.html" class="toolbar-back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+      <button type="button" class="toolbar-print-btn" id="invoicePrintTrigger"><i class="fa-solid fa-print"></i> Print or Save PDF</button>
+    </div>
+  </div>
+
+  <!-- Master Printable Bill Document Sheet Frame -->
+  <div class="invoice-document-sheet">
+    
+    <!-- Invoice Branding Header Block -->
+    <div class="invoice-header-grid">
+      <div class="invoice-logo-block">
+        <h2><i class="fa fa-shopping-bag"></i> Cliffo<span>Global</span></h2>
+        <p>LIMITED</p>
+      </div>
+      <div class="invoice-meta-block">
+        <h1>INVOICE</h1>
+        <p><strong>Invoice Number:</strong> SV-12345</p>
+        <p><strong>Order Date:</strong> June 23, 2026</p>
+        <p><strong>Payment Status:</strong> <span class="invoice-badge status-paid">PAID via Paystack</span></p>
+      </div>
+    </div>
+
+    <!-- Client / Company Address split block details -->
+    <div class="invoice-address-grid">
+      <div class="address-col">
+        <h3>Billed To:</h3>
+        <strong>John Doe</strong>
+        <p>12, Allen Avenue,</p>
+        <p>Ikeja, Lagos State,</p>
+        <p>Nigeria.</p>
+        <p>john.doe@example.com</p>
+      </div>
+      <div class="address-col">
+        <h3>Issued By:</h3>
+        <strong>CliffOGlobal Limited.</strong>
+        <p>5&6 Lawranzo Shopping Complex Ado round about</p>
+        <p>Lagos State,</p>
+        <p>Nigeria.</p>
+        <p>clifford2nice@yahoo.com</p>
+      </div>
+    </div>
+
+    <!-- Itemized Products Listing Ledger Table -->
+    <div class="invoice-items-table-wrapper">
+      <table class="invoice-ledger-table">
+        <thead>
+          <tr>
+            <th>Product Description</th>
+            <th class="txt-center">Unit Price</th>
+            <th class="txt-center">Qty</th>
+            <th class="txt-right">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Sony WH-1000XM4 Wireless Headphones</strong>
+              <span class="item-subtext">Variant: Matte Black | Bundle: Standard Pack</span>
+            </td>
+            <td class="txt-center">₦185,000</td>
+            <td class="txt-center">1</td>
+            <td class="txt-right">₦185,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Balance Summary Breakdown Receipt Box -->
+    <div class="invoice-totals-wrapper">
+      <div class="totals-inner-box">
+        <div class="total-receipt-line">
+          <span>Subtotal:</span>
+          <span>₦185,000</span>
+        </div>
+        <div class="total-receipt-line">
+          <span>Logistics Shipping:</span>
+          <span>₦3,500</span>
+        </div>
+        <div class="total-receipt-line grand-total-line">
+          <span>Grand Total:</span>
+          <strong>₦188,500</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Terms Disclaimers and Sign-off Footnotes -->
+    <div class="invoice-document-footer">
+      <h4>Thank you for your purchase! 🌟</h4>
+      <p>This document serves as an official proof of payment transaction cover. For warranty validation requests, please retain this copy along with any original packaging checklists.</p>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+
+  <script src="invoice.js"></script>
+</body>
+</html>

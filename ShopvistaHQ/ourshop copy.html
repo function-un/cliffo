@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ShopvistaHQ | Marketplace</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="prod.css">
+  <link rel="stylesheet" href="two.css">
+</head>
+<body>
+
+  <!-- Sticky Global Marketplace Header Area -->
+  <header class="header-area">
+    <div class="top-bar">
+      <div class="container">
+        <!-- Optimized for US, UK, CA, AU targeting -->
+        <div>⚡ Fast Free Shipping to US, UK, CA & AU over $50!</div>
+        <div class="top-bar-links">
+          <a href="track.html">Track Order</a> | 
+          <a href="faq.html">Help Center</a> |
+          <span class="currency-selector"><i class="fa-solid fa-globe"></i> USD ($)</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo-container">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/logo1.png" alt="ShopvistaHQ Logo" style="width: 60px; height: 20px;">
+           Shopvista<span>HQ</span>
+          </a>
+        </div>
+        <div class="search-container">
+          <form id="marketplaceSearch">
+            <input type="text" id="searchInput" placeholder="Search across millions of items..." required />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <ul class="nav-links" id="desktopNavLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ourshop.html" class="active">Our Shop</a></li>
+
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="cart.html">CART</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="action-item"><i class="fa fa-heart"></i><span class="badge">0</span></div>
+          <div class="action-item"><i class="fa fa-shopping-cart"></i><span class="badge" id="cartCounter">0</span></div>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+    
+	
+	<!-- Collapsible Mobile Responsive Navigation Bar Menu Strip -->
+<div class="mobile-navigation-bar" id="mobileNavigationBar">
+  <div class="container">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="active"><i class="fa fa-home"></i> Home</a></li>
+      
+      <!-- Categories List Item with Hamburger Toggle -->
+      <li class="mobile-dropdown">
+        <a href="#" id="categoryToggle">
+          <i class="fa fa-laptop"></i> Categories 
+          <i class="fa fa-bars toggle-icon"></i> <!-- Hamburger Icon -->
+        </a>
+        <!-- Hidden Category Items -->
+        <ul class="mobile-submenu" id="mobileSubmenu">
+          <li><a href="electronics.html">Electronics</a></li>
+          <li><a href="clothing.html">Clothing</a></li>
+          <li><a href="shoes.html">Shoes</a></li>
+        </ul>
+      </li>
+
+      <li><a href="ourshop.html"><i class="fa fa-store"></i> Our Shop</a></li>
+      <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+      <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart </a></li>
+    </ul>
+  </div>
+</div>
+
+  </header>
+
+  <!-- Shop Main Content Layout -->
+  <main class="container">
+    <div class="shop-header-block">
+      <h1>Explore Marketplace Catalog</h1>
+      <p>Filter through our premium selected items instantly.</p>
+    </div>
+
+    <div class="shop-layout-split">
+      
+      <!-- Left Sidebar: Filter Control Module -->
+      <aside class="shop-sidebar-filters" id="sidebar-filters">
+        <!-- 
+        <div class="filter-card">
+          <h3>Categories</h3>
+          <ul class="filter-category-list" id="shopCategoryFilterGroup">
+            <li class="active" data-category="all">All Products <span class="count-pill">20</span></li>
+            <li data-category="Tech">Smart & Tech <span class="count-pill">2</span></li>
+            <li data-category="Accesories">Accesories & Gadgets <span class="count-pill">1</span></li>
+            <li data-category="Appliances">Home Appliances <span class="count-pill">1</span></li>
+          </ul>
+        </div>
+        -->
+      </aside>
+
+      <!-- Right Main Content: Grid Catalog Wrapper -->
+      <div class="shop-catalog-main">
+        
+        <div class="catalog-meta-strip">
+          <span id="catalogResultsCounter">Showing 4 products</span>
+        </div>
+
+        <section class="product-grid" id="filterableShopGrid">
+          
+          <!-- 
+          <div class="product-card" data-category="audio">
+            <a href="prod.html">
+              <div class="tag-discount">-30%</div>
+              <div class="card-thumb">
+                <img src="https://unsplash.com" alt="Product">
+              </div>
+              <div class="card-details">
+                <span class="card-brand">Sony Audio</span>
+                <div class="card-title">WH-1000XM4 Wireless Intelligent Noise Cancelling Over-Ear Headphones Bundle</div>
+                <div class="card-meta">
+                  <div class="price-box">
+                    <span class="current-price">₦185,000</span>
+                    <span class="old-price">₦250,000</span>
+                  </div>
+                  <div class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          
+          <div class="product-card" data-category="wearables">
+            <div class="tag-discount">HOT</div>
+            <div class="card-thumb">
+              <img src="https://unsplash.com" alt="Product">
+            </div>
+            <div class="card-details">
+              <span class="card-brand">Minimalist Lab</span>
+              <div class="card-title">Premium Brushed Stainless Steel Quartz Analog Sports Luxury Wrist Watch</div>
+              <div class="card-meta">
+                <div class="price-box">
+                  <span class="current-price">₦45,000</span>
+                </div>
+                <div class="add-to-cart-btn"><i class="fa fa-shopping-bag"></i></div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="product-card" data-category="audio">
+            <div class="card-thumb">
+              <img src="https://unsplash.com" alt="Product">
+            </div>
+            <div class="card-details">
+              <span class="card-brand">Sony Audio</span>
+              <div class="card-title">WF-1000XM4 True Wireless Noise Cancelling In-Ear Smart Earbuds</div>
+              <div class="card-meta">
+                <div class="price-box">
+                  <span class="current-price">₦95,000</span>
+                </div>
+                <div class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i></div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="product-card" data-category="computing">
+            <div class="tag-discount">-15%</div>
+            <div class="card-thumb">
+              <img src="https://unsplash.com" alt="Product">
+            </div>
+            <div class="card-details">
+              <span class="card-brand">ProStream</span>
+              <div class="card-title">Mechanical Compact RGB Backlit Gaming Keyboard Pack Dual Wireless</div>
+              <div class="card-meta">
+                <div class="price-box">
+                  <span class="current-price">₦38,000</span>
+                  <span class="old-price">₦45,000</span>
+                </div>
+                <div class="add-to-cart-btn"><i class="fa fa-shopping-bag"></i></div>
+              </div>
+            </div>
+          </div>
+          -->
+
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Block -->
+   <!-- Upgraded Marketplace Footer Block Area -->
+  <footer class="global-site-footer">
+    <div class="container">
+      
+      <div class="footer-columns-row">
+        
+        <!-- Column 1: Core Company Identifier -->
+        <div class="footer-info-col">
+          <h3>Shopvista<span>HQ</span></h3>
+          <p>Your premier global marketplace for trending high-utility gadgets and flagship consumer tech. Dispatching directly from local hub facilities to your doorstep.</p>
+          <!-- Trust Badges for Western Buyers -->
+          <div class="payment-icons">
+            <i class="fa-brands fa-cc-visa" title="Visa"></i>
+            <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+            <i class="fa-brands fa-cc-stripe" title="Stripe Secure"></i>
+          </div>
+        </div>
+
+        <!-- Column 2: Legal Policy Nodes Links Array -->
+        <div class="footer-links-col">
+          <h4>Legal Information</h4>
+          <ul>
+            <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            <li><a href="refund.html"><i class="fa-solid fa-arrow-rotate-left"></i> Refund Policy</a></li>
+            <li><a href="terms.html"><i class="fa-solid fa-scale-balanced"></i> Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Support Assistance Links Array -->
+        <div class="footer-links-col">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> Help FAQ Base</a></li>
+            <li><a href="track.html"><i class="fa-solid fa-truck-fast"></i> Shipping Policy</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Copyright Registration Sub-Strip -->
+      <div class="footer-copyright-substrip">
+        <p><strong>ShopvistaHQ Inc.</strong> - © 2026 All Rights Reserved.</p>
+      </div>
+
+    </div>
+  
+  </footer>
+
+
+
+<script>
+  async function loadPh() {
+    const res = await fetch("/shopvistaHQ/otherp");
+    const data = await res.json();
+     
+
+    const numb = Number((data.cate))
+
+    for(let i = 0; i <= numb.length, i++;){
+
+      const numm = i[0].length;
+
+      document.getElementById("sidebar-filters").innerHTML = `
+
+    
+
+    <div class="filter-card">
+          <h3>Categories</h3>
+          <ul class="filter-category-list" id="shopCategoryFilterGroup">
+            <li class="active" data-category="all">All Products <span class="count-pill">${numm}</span></li>
+            <li data-category="Tech">Smart & Tech <span class="count-pill">2</span></li>
+            <li data-category="Accesories">Accesories & Gadgets <span class="count-pill">1</span></li>
+            <li data-category="Appliances">Home Appliances <span class="count-pill">1</span></li>
+          </ul>
+        </div>
+
+        `
+
+    }
+
+
+    
+
+    document.getElementById("filterableShopGrid").innerHTML =
+    data.map(proa => `
+
+
+
+    <div class="product-card" data-category="${proa.cate}">
+            <a href="prod.html?page=otherp&id=${proa.id}">
+              <div class="tag-discount">-30%</div>
+              <div class="card-thumb">
+                <img src="../cliffo/${proa.imageUrl}" alt="" style="height:170px;>
+              </div>
+              <div class="card-details">
+                <span class="card-brand">${proa.pBrand}</span>
+          <div class="card-title">${proa.pModel}</div>
+                
+                <div class="card-meta">
+                  <div class="price-box">
+                    <span class="current-price">$${proa.prize}</span>
+                    <span class="old-price">HOT</span>
+                  </div>
+                  <div class="add-to-cart-btn">
+                    <i class="fa fa-shopping-cart"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+
+
+   
+    `
+
+
+    
+  
+  ).join("");
+  }
+  loadPh()
+</script>
+
+
+  <script src="two.js"></script>
+</body>
+</html>
