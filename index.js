@@ -3,32 +3,34 @@ const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const multer = require("multer");
-const PORT = process.env.PORT || 3000;
-
-
-//const searchRouter = require('./searchRouter');
-
-//app.use('/search', searchRouter);
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//app.use('/search', searchRouter);
+// Serve frontend files
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static("public")); // keeps your HTML/CSS/JS accessible
-app.use(express.static(__dirname)); // this allows fetching sales.json directly
+// Serve project files
+app.use(express.static(__dirname));
 
-app.use('/', express.static(path.join(__dirname, 'shopvistaHQ')));
+// Serve product images if they are in this folder
+app.use('/shopvistaHQ', express.static(path.join(__dirname, 'ShopvistaHQ')));
+
+
+
+
 
 // Multer setup for image uploads
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "shopvistaHQ/assets/images"); // your images folder
+        cb(null, path.join(__dirname, "ShopvistaHQ", "assets", "images"));
     },
-    filename: (req, file, cb) => { // was typo "fliename" before
+    filename: (req, file, cb) => {
+
         cb(null, Date.now() + "_" + file.originalname);
     }
 });
