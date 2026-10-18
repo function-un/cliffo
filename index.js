@@ -29,6 +29,9 @@ app.get("/", (req, res) => {
     );
 });
 
+// Serve ShopVistaHQ pages and assets from the root URL
+app.use(express.static(path.join(__dirname, "ShopvistaHQ")));
+
 // Serve project files
 app.use(express.static(__dirname));
 
