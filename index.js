@@ -3,15 +3,20 @@ const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const multer = require("multer");
+const { Pool } = require("pg");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Neon PostgreSQL connection
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Serve frontend files
 
 // Serve frontend files
 app.use(express.static(path.join(__dirname, "public")));
@@ -37,6 +42,30 @@ app.use(express.static(__dirname));
 
 // Serve ShopVistaHQ files and assets
 app.use("/shopvistaHQ", express.static(path.join(__dirname, "ShopvistaHQ")));
+
+// Test Neon database connection
+app.get("/db-test", async (req, res) => {
+    try {
+        const result = await pool.query(
+            "SELECT NOW() AS time, current_database() AS database"
+        );
+
+        res.json({
+            success: true,
+            message: "Neon database connected successfully",
+            database: result.rows[0].database,
+            time: result.rows[0].time
+        });
+    } catch (error) {
+        console.error("Database connection failed:", error.message);
+
+        res.status(500).json({
+            success: false,
+            message: "Database connection failed",
+            error: error.message
+        });
+    }
+});
 
 
 

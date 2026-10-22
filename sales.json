@@ -1,3 +1,44 @@
 [
-  
+  {
+    "name": "samuel chinonso",
+    "email": "cliffog2025@outlook.com",
+    "phone": "09133801419",
+    "address": "23 dauda str ira",
+    "cartText": "Elitebook 830 g10 × 1 — ₦500000",
+    "total": 500000,
+    "delVal": "7000",
+    "totalS": 507000,
+    "orderId": "ORD-1829732390717",
+    "date": "2/6/2026",
+    "time": "08:26 PM",
+    "timestamp": "2/6/2026, 8:26:41 PM"
+  },
+  {
+    "name": "samuel chinonso",
+    "email": "cliffog2025@outlook.com",
+    "phone": "09133801419",
+    "address": "23 dauda str ira",
+    "cartText": "Elitebook 830 g10 × 1 — ₦500000",
+    "total": 500000,
+    "delVal": "7000",
+    "totalS": 507000,
+    "orderId": "ORD-1829732390717",
+    "date": "2/6/2026",
+    "time": "08:26 PM",
+    "timestamp": "2/6/2026, 8:26:41 PM"
+  },
+  {
+    "name": "samuel chinonso",
+    "email": "cliffog2025@outlook.com",
+    "phone": "09133801419",
+    "address": "23 dauda str ira",
+    "cartText": "Elitebook 830 g10 × 1 — ₦500000",
+    "total": 500000,
+    "delVal": "7000",
+    "totalS": 507000,
+    "orderId": "ORD-1829732390717",
+    "date": "2/6/2026",
+    "time": "08:26 PM",
+    "timestamp": "2/6/2026, 8:26:41 PM"
+  }
 ]

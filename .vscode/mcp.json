@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"Neon": {
+			"type": "http",
+			"url": "https://mcp.neon.tech/mcp"
+		},
+		"my-mcp-server-9d9b311e": {
+			"url": "https://mcp.neon.tech/mcp",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}

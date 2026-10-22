@@ -5,5 +5,19 @@
     "email": "john@gmail.com",
     "phone": "08012345678",
     "address": "Ikeja, Lagos"
+  },
+  {
+    "clientId": "#00102",
+    "name": "John Doe",
+    "email": "john@gmail.com",
+    "phone": "08012345678",
+    "address": "Ikeja, Lagos"
+  },
+  {
+    "clientId": "#00103",
+    "name": "John Doe",
+    "email": "john@gmail.com",
+    "phone": "08012345678",
+    "address": "Ikeja, Lagos"
   }
 ]
